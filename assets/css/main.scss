@@ -1,0 +1,19 @@
+@import './base', './layout', './modules/menu-btn';
+
+.section-hero {
+    background-image: $bg-gradient;
+}
+
+//--- Desktop ---//
+@media only screen and (min-width : 50em) {
+    
+    header {
+        .menu {
+            display: flex;
+        }
+
+        .menu-mobile {
+            display: none;
+        }
+    }
+}
