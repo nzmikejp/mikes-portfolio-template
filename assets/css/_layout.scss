@@ -1,21 +1,29 @@
-header {
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: $padding-x-6;
     position: fixed;
     width: 100%;
-    height: 8em;
+    height: 128px;
     top: 0;
     left: 0;
     z-index: 90;
-    mix-blend-mode: difference;
-  
+    transition: ease 0.3s all;
 
-    .nav-brand {
-        max-width: 70%;
+    &--scrolled {
+        height: 70px;
+        background-color: $color-dark;
+
+        .nav-brand {
+            max-width: 60%;
+
+            @include breakpoint-65 {
+                width: 17em;
+            }
+        }
     }
-
+  
     .menu {
         display: none;
         transition: ease 0.3s all;
@@ -71,52 +79,60 @@ header {
         }
     }
 
-    .nav-social {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width:30rem;
-        transform:  rotate(90deg) translateY(-28.5rem);
-        transform-origin: top left;
+}
 
-        .nav-bar {
-            flex: 0 0 8.5em;
-            height: 1px;
-            background-color: $color-medium;
-            border-radius: 0 0.5em 0.5em 0;
+.nav-brand {
+    max-width: 70%;
+    transition: ease 0.5s all;
+}
+
+.nav-social {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width:30rem;
+    transform:  rotate(90deg) translateY(-28.5rem);
+    transform-origin: top left;
+    mix-blend-mode: difference;
+    z-index: 90;
+
+    .nav-bar {
+        flex: 0 0 8.5em;
+        height: 1px;
+        background-color: $color-medium;
+        border-radius: 0 0.5em 0.5em 0;
+    }
+
+    .nav-email {
+        transform: rotate(180deg);
+        padding: $padding-x-2;
+        color: $color-light-20;
+        display: block;
+        line-height: 1.2;
+        letter-spacing: $letter-spacing;
+        font-size: 0.9rem;
+        transition: ease color 0.3s;
+
+        &:hover {
+            color: $color-accent-red;
         }
+    }
 
-        .nav-email {
-            transform: rotate(180deg);
-            padding: $padding-x-2;
-            color: $color-light-20;
-            display: block;
-            line-height: 1.2;
-            letter-spacing: $letter-spacing;
-            font-size: 0.9rem;
+    .social-links {
+        color: $color-medium;
+        display: flex;
+        text-align: center;
+        
+        a {
+            color: inherit;
+            transform: rotate(-90deg);
+            margin: $margin-x-1;
             transition: ease color 0.3s;
 
             &:hover {
-                color: $color-accent-red;
-            }
-        }
-
-        .social-links {
-            color: $color-medium;
-            display: flex;
-            text-align: center;
-            
-            a {
-                color: inherit;
-                transform: rotate(-90deg);
-                margin: $margin-x-1;
-                transition: ease color 0.3s;
-
-                &:hover {
-                    color: $color-light-20;
-                }
+                color: $color-light-20;
             }
         }
     }

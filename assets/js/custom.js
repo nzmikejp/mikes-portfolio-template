@@ -17,8 +17,15 @@
                             
                 bIsOpen = false
             }
-    
         })
+
+
+        //--- Sticky header
+        ScrollTrigger.create({
+            start: 'top -130',
+            end: 99999,
+            toggleClass: {className: 'main-header--scrolled', targets: '.main-header'}
+        });
 
     })
 

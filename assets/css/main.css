@@ -43,7 +43,7 @@ body {
   font-family: "gothambook", sans-serif;
 }
 
-header {
+.main-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,25 +56,37 @@ header {
   padding: 0 3rem;
   position: fixed;
   width: 100%;
-  height: 8em;
+  height: 128px;
   top: 0;
   left: 0;
   z-index: 90;
-  mix-blend-mode: difference;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
-header .nav-brand {
-  max-width: 70%;
+.main-header--scrolled {
+  height: 70px;
+  background-color: #0E0E0E;
 }
 
-header .menu {
+.main-header--scrolled .nav-brand {
+  max-width: 60%;
+}
+
+@media (min-width: 65em) {
+  .main-header--scrolled .nav-brand {
+    width: 17em;
+  }
+}
+
+.main-header .menu {
   display: none;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
 }
 
 @media (min-width: 65em) {
-  header .menu {
+  .main-header .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -82,12 +94,12 @@ header .menu {
 }
 
 @media (min-width: 65em) {
-  header .menu-mobile {
+  .main-header .menu-mobile {
     display: none;
   }
 }
 
-header .menu a {
+.main-header .menu a {
   color: #4C4C53;
   position: relative;
   padding: 0.8em 0;
@@ -99,15 +111,15 @@ header .menu a {
   font-size: 0.9rem;
 }
 
-header .menu a:hover {
+.main-header .menu a:hover {
   color: #EEEEEE;
 }
 
-header .menu a:hover:after {
+.main-header .menu a:hover:after {
   width: 100%;
 }
 
-header .menu a:after {
+.main-header .menu a:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -120,15 +132,21 @@ header .menu a:after {
   transition: ease width 0.3s;
 }
 
-header .menu a.active {
+.main-header .menu a.active {
   color: #EEEEEE;
 }
 
-header .menu a.active:after {
+.main-header .menu a.active:after {
   width: 100%;
 }
 
-header .nav-social {
+.nav-brand {
+  max-width: 70%;
+  -webkit-transition: ease 0.5s all;
+  transition: ease 0.5s all;
+}
+
+.nav-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,9 +161,11 @@ header .nav-social {
           transform: rotate(90deg) translateY(-28.5rem);
   -webkit-transform-origin: top left;
           transform-origin: top left;
+  mix-blend-mode: difference;
+  z-index: 90;
 }
 
-header .nav-social .nav-bar {
+.nav-social .nav-bar {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 8.5em;
           flex: 0 0 8.5em;
@@ -154,7 +174,7 @@ header .nav-social .nav-bar {
   border-radius: 0 0.5em 0.5em 0;
 }
 
-header .nav-social .nav-email {
+.nav-social .nav-email {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   padding: 0 1rem;
@@ -167,11 +187,11 @@ header .nav-social .nav-email {
   transition: ease color 0.3s;
 }
 
-header .nav-social .nav-email:hover {
+.nav-social .nav-email:hover {
   color: #FF0000;
 }
 
-header .nav-social .social-links {
+.nav-social .social-links {
   color: #4C4C53;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,7 +199,7 @@ header .nav-social .social-links {
   text-align: center;
 }
 
-header .nav-social .social-links a {
+.nav-social .social-links a {
   color: inherit;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -188,7 +208,7 @@ header .nav-social .social-links a {
   transition: ease color 0.3s;
 }
 
-header .nav-social .social-links a:hover {
+.nav-social .social-links a:hover {
   color: #EEEEEE;
 }
 
