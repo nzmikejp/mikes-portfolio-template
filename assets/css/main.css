@@ -17,11 +17,26 @@
   src: url(../fonts/Avallon/font.woff2) format("woff2"), url(../fonts/Avallon/font.woff) format("woff");
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Avallon", "cursive";
+  color: #0E0E0E;
+}
+
+p {
+  font-size: 0.97rem;
+  color: #0E0E0E;
+}
+
 * {
   list-style-type: none;
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
 }
 
 body {
@@ -38,17 +53,38 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2em 2em;
+  padding: 0 3rem;
   position: fixed;
   width: 100%;
+  height: 8em;
   top: 0;
   left: 0;
+  z-index: 90;
+  mix-blend-mode: difference;
+}
+
+header .nav-brand {
+  max-width: 70%;
 }
 
 header .menu {
   display: none;
   -webkit-transition: ease 0.3s all;
   transition: ease 0.3s all;
+}
+
+@media (min-width: 65em) {
+  header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 65em) {
+  header .menu-mobile {
+    display: none;
+  }
 }
 
 header .menu a {
@@ -60,21 +96,36 @@ header .menu a {
   transition: ease color 0.3s;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  font-size: 0.9rem;
 }
 
 header .menu a:hover {
   color: #EEEEEE;
 }
 
-header .menu a.active:after {
+header .menu a:hover:after {
+  width: 100%;
+}
+
+header .menu a:after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 3px;
   background-color: #FF0000;
   border-radius: 1.5px;
+  -webkit-transition: ease width 0.3s;
+  transition: ease width 0.3s;
+}
+
+header .menu a.active {
+  color: #EEEEEE;
+}
+
+header .menu a.active:after {
+  width: 100%;
 }
 
 header .nav-social {
@@ -87,10 +138,9 @@ header .nav-social {
   position: fixed;
   top: 0;
   right: 0;
-  width: 20rem;
-  -webkit-transform: rotate(90deg) translateY(-20rem);
-          transform: rotate(90deg) translateY(-20rem);
-  border: thin green solid;
+  width: 30rem;
+  -webkit-transform: rotate(90deg) translateY(-28.5rem);
+          transform: rotate(90deg) translateY(-28.5rem);
   -webkit-transform-origin: top left;
           transform-origin: top left;
 }
@@ -99,12 +149,47 @@ header .nav-social .nav-bar {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 8.5em;
           flex: 0 0 8.5em;
-  border: thin red solid;
+  height: 1px;
+  background-color: #4C4C53;
+  border-radius: 0 0.5em 0.5em 0;
 }
 
 header .nav-social .nav-email {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+  padding: 0 1rem;
+  color: #EEEEEE;
+  display: block;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  -webkit-transition: ease color 0.3s;
+  transition: ease color 0.3s;
+}
+
+header .nav-social .nav-email:hover {
+  color: #FF0000;
+}
+
+header .nav-social .social-links {
+  color: #4C4C53;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+header .nav-social .social-links a {
+  color: inherit;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  margin: 0 0.5rem;
+  -webkit-transition: ease color 0.3s;
+  transition: ease color 0.3s;
+}
+
+header .nav-social .social-links a:hover {
+  color: #EEEEEE;
 }
 
 .wrap {
@@ -114,7 +199,91 @@ header .nav-social .nav-email {
 
 .section {
   width: 100%;
-  min-height: 100vh;
+  position: relative;
+  padding-top: 5em;
+}
+
+.headline-hero {
+  font-size: 5.5rem;
+  text-align: center;
+  color: #4C4C53;
+  line-height: 1;
+}
+
+@media (min-width: 65em) {
+  .headline-hero {
+    font-size: 8.8rem;
+    text-align: left;
+  }
+}
+
+.byline-hero {
+  color: #888888;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.15em;
+  max-width: 65%;
+  font-family: "gothambook", sans-serif;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.byline-hero:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 7.5em;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: #FF0000;
+}
+
+@media (min-width: 65em) {
+  .byline-hero {
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .byline-hero:after {
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.headline {
+  font-size: 5.5rem;
+  border: 10px #fff solid;
+  display: inline-block;
+  line-height: 1;
+  padding: 1rem 2rem 0.5rem 1rem;
+  margin-bottom: 0.4em;
+  color: #414141;
+}
+
+@media (min-width: 65em) {
+  .headline {
+    font-size: 7rem;
+  }
+}
+
+.divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: -1px;
+}
+
+.divider svg {
+  display: block;
 }
 
 .menu-btn {
@@ -195,16 +364,72 @@ header .nav-social .nav-email {
 
 .section-hero {
   background-image: radial-gradient(60.64% 87.97% at 0% 0%, #4C4C53 0%, #0E0E0E 100%);
+  padding-top: 10em;
 }
 
-@media only screen and (min-width: 50em) {
-  header .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.section-hero .profile-img {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+@media (min-width: 65em) {
+  .section-hero .cell-content {
+    margin-top: -10em;
   }
-  header .menu-mobile {
-    display: none;
+  .section-hero .profile-img {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.section-hero .divider svg path {
+  fill: #EEEEEE;
+}
+
+.section-about {
+  background-color: #EEEEEE;
+  position: relative;
+}
+
+.section-about .cell-content {
+  padding-right: 5em;
+  padding-bottom: 2em;
+}
+
+@media (min-width: 65em) {
+  .section-about .cell-content {
+    padding-bottom: 5em;
+  }
+}
+
+.section-about .cell-img {
+  padding-left: 0;
+  max-width: 80%;
+  position: relative;
+}
+
+@media (min-width: 45em) {
+  .section-about .cell-img {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 64em) {
+  .section-about .cell-img {
+    padding-top: 5em;
+  }
+  .section-about .cell-img::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-43%);
+            transform: translateY(-43%);
+    width: 4px;
+    height: 90%;
+    border-radius: 2px;
+    z-index: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -2,15 +2,33 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $padding-4;
+    padding: $padding-x-6;
     position: fixed;
     width: 100%;
+    height: 8em;
     top: 0;
     left: 0;
+    z-index: 90;
+    mix-blend-mode: difference;
+  
+
+    .nav-brand {
+        max-width: 70%;
+    }
 
     .menu {
         display: none;
         transition: ease 0.3s all;
+
+        @include breakpoint-65 {
+            display: flex;
+        }
+    }
+
+    .menu-mobile {
+        @include breakpoint-65 {
+            display: none;
+        }
     }
 
     .menu a {
@@ -20,24 +38,36 @@ header {
         margin: 0 1em;
         transition: ease color 0.3s;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: $letter-spacing;
+        font-size: 0.9rem;
 
         &:hover {
             color: $color-light-20;
+
+            &:after {
+                width: 100%;
+            }
         }
 
-    }
-
-    .menu a.active {
         &:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 0;
             height: 3px;
             background-color: $color-accent-red;
             border-radius: 1.5px;
+            transition: ease width 0.3s;
+        }
+
+    }
+
+    .menu a.active {
+        color: $color-light-20;
+
+        &:after {
+            width: 100%;
         }
     }
 
@@ -47,18 +77,47 @@ header {
         position: fixed;
         top: 0;
         right: 0;
-        width:20rem;
-        transform:  rotate(90deg) translateY(-20rem);
-        border:thin green solid;
+        width:30rem;
+        transform:  rotate(90deg) translateY(-28.5rem);
         transform-origin: top left;
 
         .nav-bar {
             flex: 0 0 8.5em;
-            border: thin red solid;
+            height: 1px;
+            background-color: $color-medium;
+            border-radius: 0 0.5em 0.5em 0;
         }
 
         .nav-email {
             transform: rotate(180deg);
+            padding: $padding-x-2;
+            color: $color-light-20;
+            display: block;
+            line-height: 1.2;
+            letter-spacing: $letter-spacing;
+            font-size: 0.9rem;
+            transition: ease color 0.3s;
+
+            &:hover {
+                color: $color-accent-red;
+            }
+        }
+
+        .social-links {
+            color: $color-medium;
+            display: flex;
+            text-align: center;
+            
+            a {
+                color: inherit;
+                transform: rotate(-90deg);
+                margin: $margin-x-1;
+                transition: ease color 0.3s;
+
+                &:hover {
+                    color: $color-light-20;
+                }
+            }
         }
     }
 }
@@ -70,5 +129,83 @@ header {
 
 .section {
     width: 100%;
-    min-height: 100vh;
+    position: relative;
+    padding-top: 5em;
+}
+
+.headline-hero {
+    font-size: $headline-size-1-mob;
+    text-align: center;
+    color: $color-medium;
+    line-height: 1;
+
+    @include breakpoint-65 {
+        font-size: $headline-size-1;
+        text-align: left;
+    }
+
+}
+
+.byline-hero {
+    color: darken($color-light-20, 40%);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: $letter-spacing;
+    max-width: 65%;
+    font-family: $font-primary-book;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding: $padding-y-2;
+    margin-bottom: 1em;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 7.5em;
+        height: 3px;
+        border-radius: 1.5px;
+        background-color: $color-accent-red;
+    }
+
+    @include breakpoint-65 {
+        text-align: left;
+        margin: 0;
+        font-size: 1.5rem;
+
+        &:after {
+            left: 0;
+            transform: translateX(0);
+        }
+    }
+}
+
+.headline {
+    font-size: $headline-size-2-mob;
+    border: 10px $color-light solid;
+    display: inline-block;
+    line-height: 1;
+    padding: 1rem 2rem 0.5rem 1rem;
+    margin-bottom: 0.4em;
+    color: lighten($color-dark, 20%);
+
+    @include breakpoint-65 {
+        font-size: $headline-size-2; 
+    }
+}
+
+.divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    margin-bottom: -1px;
+
+    svg {
+        display: block;
+    }
 }

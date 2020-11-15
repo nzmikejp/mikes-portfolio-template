@@ -2,18 +2,69 @@
 
 .section-hero {
     background-image: $bg-gradient;
-}
-
-//--- Desktop ---//
-@media only screen and (min-width : 50em) {
+    padding-top: 10em;
     
-    header {
-        .menu {
-            display: flex;
+    .profile-img {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    @include breakpoint-65 { 
+        .cell-content{
+            margin-top: -10em; 
         }
 
-        .menu-mobile {
-            display: none;
+        .profile-img {
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    .divider {
+        svg path{
+            fill: $color-light-20;
+        }
+    }
+
+}
+
+.section-about {
+    background-color: $color-light-20;
+    position: relative;
+
+    .cell-content {
+        padding-right: 5em;
+        padding-bottom: 2em;
+
+        @include breakpoint-65 {
+            padding-bottom: 5em;
+        }
+    }
+
+    .cell-img {
+        padding-left: 0;
+        max-width: 80%;
+        position: relative;
+
+        @include breakpoint-custom(45){
+            max-width: 60%;
+        }
+
+        @include breakpoint-custom(64) {
+            padding-top: 5em;
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: $color-light;
+                left: 0;
+                top: 50%;
+                transform: translateY(-43%);
+                width: 4px;
+                height: 90%;
+                border-radius: 2px;
+                z-index: 1;
+            }
         }
     }
 }
