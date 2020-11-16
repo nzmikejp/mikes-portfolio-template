@@ -83,6 +83,10 @@ $margin-4: 2rem 2rem;
 $margin-5: 2.5rem 2.5rem;
 $margin-6: 3rem 3rem;
 
+$border-thin-dark: thin rgba(0,0,0,0.2) solid;
+
+$shadow-inset: inset 0 0.5em 0.8em rgba(0,0,0,0.1);
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-headline;
     color: $color-dark;
@@ -91,6 +95,18 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-size: 0.97rem;
     color: $color-dark;
+}
+
+a {
+    color: $color-dark;
+
+    &:hover {
+        color: lighten($color-dark, 30%);
+    }
+}
+
+.h1 {
+    font-family: $font-primary-book;
 }
 
 //--- breakpoints
@@ -124,4 +140,12 @@ img {
 
 body {
     font-family: $font-primary-book;
+}
+
+.font-bold {
+    font-family: $font-primary-bold;
+}
+
+.shadow-inset-top {
+    box-shadow: $shadow-inset;
 }

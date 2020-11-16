@@ -213,6 +213,20 @@
     }
 }
 
+.headline-dark {
+    font-size: $headline-size-2-mob;
+    border: 10px $color-light-20 solid;
+    display: inline-block;
+    line-height: 1;
+    padding: 1rem 2rem 0.5rem 1rem;
+    margin-bottom: 0.4em;
+    color: lighten($color-dark, 20%);
+
+    @include breakpoint-65 {
+        font-size: $headline-size-2; 
+    }
+}
+
 .divider {
     position: absolute;
     bottom: 0;

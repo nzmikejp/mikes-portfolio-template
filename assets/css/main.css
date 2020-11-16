@@ -27,6 +27,18 @@ p {
   color: #0E0E0E;
 }
 
+a {
+  color: #0E0E0E;
+}
+
+a:hover {
+  color: #5b5b5b;
+}
+
+.h1 {
+  font-family: "gothambook", sans-serif;
+}
+
 * {
   list-style-type: none;
   text-decoration: none;
@@ -41,6 +53,15 @@ img {
 
 body {
   font-family: "gothambook", sans-serif;
+}
+
+.font-bold {
+  font-family: "gothambold", sans-serif;
+}
+
+.shadow-inset-top {
+  -webkit-box-shadow: inset 0 0.5em 0.8em rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0.5em 0.8em rgba(0, 0, 0, 0.1);
 }
 
 .main-header {
@@ -293,6 +314,22 @@ body {
   }
 }
 
+.headline-dark {
+  font-size: 5.5rem;
+  border: 10px #EEEEEE solid;
+  display: inline-block;
+  line-height: 1;
+  padding: 1rem 2rem 0.5rem 1rem;
+  margin-bottom: 0.4em;
+  color: #414141;
+}
+
+@media (min-width: 65em) {
+  .headline-dark {
+    font-size: 7rem;
+  }
+}
+
 .divider {
   position: absolute;
   bottom: 0;
@@ -450,6 +487,79 @@ body {
     height: 90%;
     border-radius: 2px;
     z-index: 1;
+  }
+}
+
+.section-skills {
+  background-color: #FAFAFA;
+  padding-bottom: 5em;
+}
+
+@media (min-width: 65em) {
+  .section-skills {
+    padding-bottom: 10em;
+  }
+}
+
+.section-skills .skills-wrap {
+  border: 10px #fff solid;
+  padding: 2rem 2rem;
+}
+
+.section-skills .skills-wrap .cell-upper {
+  border-bottom: thin rgba(0, 0, 0, 0.2) solid;
+  padding-bottom: 1em;
+}
+
+.section-skills .skills-wrap .cell-lower {
+  padding-top: 2em;
+}
+
+.section-skills .skills-wrap .cell-lower .h2 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 65em) {
+  .section-skills .skills-wrap .cell-lower .cell-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.section-skills .skills-wrap .cell-lower .cell-container:not(:last-child) {
+  border-bottom: thin rgba(0, 0, 0, 0.2) solid;
+}
+
+@media (min-width: 64em) {
+  .section-skills .skills-wrap .cell-lower .cell-container:not(:last-child) {
+    border-right: thin rgba(0, 0, 0, 0.2) solid;
+    border-bottom: none;
+  }
+}
+
+.section-skills .skills-wrap .h1 {
+  line-height: 1;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 65em) {
+  .section-skills .skills-wrap .h1 {
+    width: 90%;
+  }
+}
+
+@media (min-width: 65em) {
+  .section-projects .cell-content {
+    text-align: center;
+  }
+  .section-projects .cell-content p {
+    text-align: left;
   }
 }
 /*# sourceMappingURL=main.css.map */

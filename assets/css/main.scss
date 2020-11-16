@@ -68,3 +68,69 @@
         }
     }
 }
+
+.section-skills {
+    background-color: $color-light-10;
+    padding-bottom: 5em;
+
+    @include breakpoint-65 {
+        padding-bottom: 10em;
+    }
+
+    .skills-wrap {
+        border: 10px $color-light solid;
+        padding: $padding-4;
+
+        .cell-upper {
+            border-bottom: $border-thin-dark;
+            padding-bottom: 1em;
+        }
+
+        .cell-lower {
+            padding-top: 2em;
+
+            .h2 {
+                margin-top: 1rem;
+                font-size: 1.3rem;
+            }
+
+            @include breakpoint-65 {
+                .cell-container {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .cell-container:not(:last-child) {
+                border-bottom: $border-thin-dark;
+                
+                @include breakpoint-custom(64) {
+                    border-right: $border-thin-dark;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .h1 {
+            line-height: 1;
+            font-size: 2em;
+            margin-bottom: 1em;
+
+            @include breakpoint-65 {
+                width: 90%;
+            }
+        }
+    }
+}
+
+.section-projects {
+    @include breakpoint-65 {
+        .cell-content {
+            text-align: center;
+
+            p {
+                text-align: left;
+            }
+        }
+    }
+}
