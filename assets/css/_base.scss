@@ -124,6 +124,11 @@ $screen-65-min: 65em;
     }
 }
 
+//--- Transitions
+@mixin transition {
+    transition: ease 0.4s all;
+}
+
 
 //--- hard reset
 * {

@@ -24,7 +24,7 @@
     .menu-btn-burg {
         width: 1.5em;
         height: 3px;
-        background-color: $color-medium;
+        background-color: lighten($color-medium, 20%);
         border-radius: 3.5px;
         transition: ease 0.5s all;
 
@@ -34,7 +34,7 @@
             position: absolute;
             width: 1.5em;
             height: 3px;
-            background-color: $color-medium;
+            background-color: lighten($color-medium, 20%);
             border-radius: 3px;
             transition: ease 0.5s all;
         }

@@ -1,22 +1,30 @@
-@import './base', './layout', './modules/menu-btn';
+@import 'base',
+        'layout',
+        'modules/menu-btn',
+        'modules/divider';
 
+
+//--- Sections
 .section-hero {
-    background-image: $bg-gradient;
+    background: center bottom / cover no-repeat url('../img/bg-geo-shape.svg') $color-dark;
     padding-top: 10em;
     
     .profile-img {
         max-width: 70%;
         margin: 0 auto;
-    }
+        filter: drop-shadow(1em 0.5em 0.4em rgba(0,0,0,0.3));
 
-    @include breakpoint-65 { 
-        .cell-content{
-            margin-top: -10em; 
-        }
-
-        .profile-img {
+        @include breakpoint-65 {
             max-width: 100%;
             margin: 0;
+            filter: drop-shadow(2em 1em 0.5em rgba(0,0,0,0.3));
+        }
+    }
+
+    .cell-content{
+
+        @include breakpoint-65{
+            margin-top: -10em; 
         }
     }
 
@@ -31,6 +39,10 @@
 .section-about {
     background-color: $color-light-20;
     position: relative;
+
+    @include breakpoint-65 {
+        padding-bottom: 6em;
+    }
 
     .cell-content {
         padding-right: 5em;

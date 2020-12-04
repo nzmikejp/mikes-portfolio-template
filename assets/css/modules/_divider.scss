@@ -1,0 +1,15 @@
+//--- Divider
+.divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    margin-bottom: -1px;
+    margin-left: -1px;
+
+    svg {
+        display: block;
+        width: 105%;
+    }
+}

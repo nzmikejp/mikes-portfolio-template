@@ -3,29 +3,59 @@
     $(function(){
         
         //--- Menu Button
-        var bIsOpen = false
+        var isOpen = false
 
         $('.menu-btn').on('click',function(){
 
-            if(bIsOpen == false){
+            if(isOpen == false){
                 $(this).addClass('open')
+                $('.wrap').addClass('open')
+                $('body').addClass('hidden')
             
-                bIsOpen = true
+                isOpen = true
     
             }else {
                 $('.menu-btn').removeClass('open')
-                            
-                bIsOpen = false
+                $('.wrap').removeClass('open')
+                $('body').removeClass('hidden')
+                
+                isOpen = false
             }
         })
 
+        //--- Menu Responsive Check
+        function showWidth(display) {
+            if(display) {
+                $(window).resize(function(){
+                    var width = $(window).innerWidth()
+                    
+                    if(width > 1041 && isOpen === true ){
+                        $('.menu-btn').removeClass('open')
+                        $('.wrap').removeClass('open')
+                        $('body').removeClass('hidden')  
+        
+                        isOpen = false
+                    }
+                }) 
+            }
+        }
+
+        $(document).ready(function(){
+            showWidth(true)
+        })
+
+        gsap.registerPlugin(ScrollTrigger);
 
         //--- Sticky header
         ScrollTrigger.create({
             start: 'top -130',
             end: 99999,
-            toggleClass: {className: 'main-header--scrolled', targets: '.main-header'}
+            toggleClass: {
+                className: 'main-header--scrolled',
+                targets: '.main-header'
+            },
         });
+
 
     })
 
