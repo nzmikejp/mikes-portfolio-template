@@ -1,0 +1,23 @@
+{
+  "name": "mikes-portfolio-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nzmikejp/mikes-portfolio-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nzmikejp/mikes-portfolio-template/issues"
+  },
+  "homepage": "https://github.com/nzmikejp/mikes-portfolio-template#readme",
+  "dependencies": {
+    "bricks.js": "^1.8.0",
+    "swiper": "^6.3.5"
+  }
+}

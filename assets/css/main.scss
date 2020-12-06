@@ -47,9 +47,15 @@
     .cell-content {
         padding-right: 5em;
         padding-bottom: 2em;
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
 
         @include breakpoint-65 {
             padding-bottom: 5em;
+            text-align: left;
         }
     }
 
@@ -82,7 +88,7 @@
 }
 
 .section-skills {
-    background-color: $color-light-10;
+    background: left bottom / 20em no-repeat url('../img/bg-geo-half.svg') $color-light-10;
     padding-bottom: 5em;
 
     @include breakpoint-65 {
@@ -92,6 +98,7 @@
     .skills-wrap {
         border: 10px $color-light solid;
         padding: $padding-4;
+        background: $color-light-10;
 
         .cell-upper {
             border-bottom: $border-thin-dark;
@@ -136,13 +143,83 @@
 }
 
 .section-projects {
-    @include breakpoint-65 {
-        .cell-content {
-            text-align: center;
+    text-align: center;
 
-            p {
-                text-align: left;
+    .cell-content {
+        padding-right: 5em;
+        padding-bottom: 2em;
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+
+        @include breakpoint-65 {
+            padding-bottom: 5em;
+            text-align: left;
+        }
+    }
+
+    .cell-img {
+        img {
+            display: block;
+            width: 22em;
+            margin-top: -10em;
+        }
+    }
+
+    .swiper-container {
+        height: 300px;
+    }
+}
+
+.section-contact {
+    padding-bottom: 5em;
+    min-height: 40em;
+    display: flex;
+    align-items: center;
+    background: right bottom / contain no-repeat url('../img/bg-geo-foot.svg') $color-light-20;
+
+    .cell-img{
+        padding-bottom: 1em;
+
+        img {
+            display: block;
+            width: 20em;
+            margin: 0 auto;
+
+            @include breakpoint-65 {
+                width: 80%;
             }
         }
     }
+
+    .cell-content {
+        padding-bottom: 2em;
+        padding-right: 5em;
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+
+        a {
+            display: block;
+            text-align: left;
+        }
+
+        @include breakpoint-65 {
+            padding-bottom: 0;
+            padding-right: 0;
+            text-align: left;
+        }
+    }
+}
+
+
+.footer {
+    padding: 2em 0;
+    background: lighten($color-dark, 15%);
+    color: $color-light-20;
+    font-size: 0.8em;
 }

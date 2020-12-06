@@ -29,6 +29,8 @@ p {
 
 a {
   color: #0E0E0E;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
 a:hover {
@@ -540,11 +542,17 @@ body.hidden {
 .section-about .cell-content {
   padding-right: 5em;
   padding-bottom: 2em;
+  text-align: center;
+}
+
+.section-about .cell-content p {
+  text-align: left;
 }
 
 @media (min-width: 65em) {
   .section-about .cell-content {
     padding-bottom: 5em;
+    text-align: left;
   }
 }
 
@@ -580,7 +588,7 @@ body.hidden {
 }
 
 .section-skills {
-  background-color: #FAFAFA;
+  background: left bottom/20em no-repeat url("../img/bg-geo-half.svg") #FAFAFA;
   padding-bottom: 5em;
 }
 
@@ -593,6 +601,7 @@ body.hidden {
 .section-skills .skills-wrap {
   border: 10px #fff solid;
   padding: 2rem 2rem;
+  background: #FAFAFA;
 }
 
 .section-skills .skills-wrap .cell-upper {
@@ -643,12 +652,92 @@ body.hidden {
   }
 }
 
+.section-projects {
+  text-align: center;
+}
+
+.section-projects .cell-content {
+  padding-right: 5em;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+.section-projects .cell-content p {
+  text-align: left;
+}
+
 @media (min-width: 65em) {
   .section-projects .cell-content {
-    text-align: center;
-  }
-  .section-projects .cell-content p {
+    padding-bottom: 5em;
     text-align: left;
   }
+}
+
+.section-projects .cell-img img {
+  display: block;
+  width: 22em;
+  margin-top: -10em;
+}
+
+.section-projects .swiper-container {
+  height: 300px;
+}
+
+.section-contact {
+  padding-bottom: 5em;
+  min-height: 40em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: right bottom/contain no-repeat url("../img/bg-geo-foot.svg") #EEEEEE;
+}
+
+.section-contact .cell-img {
+  padding-bottom: 1em;
+}
+
+.section-contact .cell-img img {
+  display: block;
+  width: 20em;
+  margin: 0 auto;
+}
+
+@media (min-width: 65em) {
+  .section-contact .cell-img img {
+    width: 80%;
+  }
+}
+
+.section-contact .cell-content {
+  padding-bottom: 2em;
+  padding-right: 5em;
+  text-align: center;
+}
+
+.section-contact .cell-content p {
+  text-align: left;
+}
+
+.section-contact .cell-content a {
+  display: block;
+  text-align: left;
+}
+
+@media (min-width: 65em) {
+  .section-contact .cell-content {
+    padding-bottom: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+}
+
+.footer {
+  padding: 2em 0;
+  background: #343434;
+  color: #EEEEEE;
+  font-size: 0.8em;
 }
 /*# sourceMappingURL=main.css.map */
