@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
 
     <title>Michael J Potter | Front End Developer</title>
@@ -28,10 +29,10 @@
                     </div>
                 </div>
                 <ul class="menu">
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </header>
@@ -184,16 +185,68 @@
                         <div class="cell large-6 cell-img">
                             <img src="./assets/img/queenstown.png" alt="">
                         </div>
-                        <div class="cell swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">Slide 1</div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
+                    </div>
+                </div>
+                <div class="grid-container-fluid">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide website">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img src="./assets/img/foac.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Friends of Animals Charities</p>
+                                        <p>Website Design & Development(CMS)</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <div class="swiper-slide website">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img src="./assets/img/containerplan.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Container Plan</p>
+                                        <p>Website Design & Development(CMS)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide webapp">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img class="app" src="./assets/img/queenstown-slide.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Destination Queenstown</p>
+                                        <p>Web App Prototype</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide webapp">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img class="app" src="./assets/img/dragonfly.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Dragonfly</p>
+                                        <p>Web App Prototype</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide webapp">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img class="app" src="./assets/img/shubox.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Shu Box</p>
+                                        <p>Web App Prototype</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </section>
@@ -223,10 +276,10 @@
     </div>
     <div class="mobile-menu">
         <ul class="menu vertical">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 
@@ -239,7 +292,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/js/custom.js"></script>
 </body>
 

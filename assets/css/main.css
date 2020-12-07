@@ -500,6 +500,7 @@ body.hidden {
 .section-hero {
   background: center bottom/cover no-repeat url("../img/bg-geo-shape.svg") #0E0E0E;
   padding-top: 10em;
+  overflow: hidden;
 }
 
 .section-hero .profile-img {
@@ -675,12 +676,89 @@ body.hidden {
 
 .section-projects .cell-img img {
   display: block;
-  width: 22em;
-  margin-top: -10em;
+  width: 12em;
+  margin: 0 auto;
+}
+
+@media (min-width: 65em) {
+  .section-projects .cell-img img {
+    width: 22em;
+    margin-top: -10em;
+  }
 }
 
 .section-projects .swiper-container {
-  height: 300px;
+  height: 40em;
+  background: #FAFAFA;
+}
+
+.section-projects .swiper-slide > div {
+  position: relative;
+  height: 100%;
+}
+
+.section-projects .swiper-slide .swiper-cell-img {
+  background: #FAFAFA;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.section-projects .swiper-slide .swiper-cell-img img {
+  display: block;
+  width: 25em;
+  margin: 0 auto;
+}
+
+@media (min-width: 65em) {
+  .section-projects .swiper-slide .swiper-cell-img img {
+    width: 45em;
+  }
+}
+
+.section-projects .swiper-slide .swiper-cell-img .app {
+  width: 12em;
+}
+
+@media (min-width: 65em) {
+  .section-projects .swiper-slide .swiper-cell-img .app {
+    width: 22em;
+  }
+}
+
+.section-projects .swiper-slide .swiper-cell-content {
+  background: top left/20em no-repeat url("../img/bg-geo-trans.png") #4C4C53;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 15em;
+}
+
+@media (min-width: 65em) {
+  .section-projects .swiper-slide .swiper-cell-content {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 0 0 3em 4em;
+  }
+}
+
+.section-projects .swiper-slide .swiper-cell-content p {
+  color: inherit;
+}
+
+.section-projects .swiper-slide .swiper-cell-content .h4 {
+  margin-bottom: 0;
 }
 
 .section-contact {

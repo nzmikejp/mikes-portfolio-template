@@ -23,6 +23,19 @@
             }
         })
 
+        $('.mobile-menu a').on('click', function(){
+            $('.menu-btn').removeClass('open')
+            $('.wrap').removeClass('open')
+            $('body').removeClass('hidden')
+            
+            isOpen = false
+        })
+
+        $('.nav-menu .menu a').on('click', function(){
+            $('.nav-menu .menu a').removeClass('active')
+            $(this).addClass('active')
+        })
+
         //--- Menu Responsive Check
         function showWidth(display) {
             if(display) {
@@ -57,18 +70,20 @@
         });
 
         //--- Swiper
-        import Swiper from 'swiper/bundle';
-        import 'swiper/swiper-bundle.css';
-
         var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            autoHeight: true,
+            slidesPerView: 1,
+            mousewheel: true,
             pagination: {
                 el: '.swiper-pagination',
-              },
-            navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+                clickable: true,
             },
-            
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+             
         });
 
 
