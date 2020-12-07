@@ -1,0 +1,11 @@
+.button-custom {
+    background: transparent;
+    border: 0.2em $color-light solid;
+    transition: ease 0.3s all;
+
+    &:hover {
+        border-color: darken($color-light, 30%);
+        color: darken($color-light, 30%);
+        background: transparent;
+    }
+}

@@ -28,11 +28,11 @@
                         <div class="menu-btn-burg"></div>
                     </div>
                 </div>
-                <ul class="menu">
-                    <li><a class="active" href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="menu" id="nav-menu">
+                    <li><a class="current" href="#" data-to="#home">Home</a></li>
+                    <li><a href="#" data-to="#about">About</a></li>
+                    <li><a href="#" data-to="#projects">Projects</a></li>
+                    <li><a href="#" data-to="#contact">Contact</a></li>
                 </ul>
             </div>
         </header>
@@ -179,7 +179,7 @@
                         <div class="cell large-6 cell-content">
                             <h2 class="headline-dark">Projects</h2>
                             <p>
-                                Over the last 25 years, I have spent many hours conceptualising, brainstorming and crafting all weird and wonderful works of art.  I want to be able to show all my back catalogue but to be fair; I think I would end up boring you silly.  Instead of that, I have presented some of my most recent work. And few of my favourites from the past.  If you have any questions, feel free to get in <a href="#" class="font-bold">contact.</a>
+                                Over the last 25 years, I have spent many hours conceptualising, brainstorming and crafting all weird and wonderful works of art.  I want to be able to show all my back catalogue but to be fair; I think I would end up boring you silly.  Instead of that, I have presented some of my most recent work. And few of my favourites from the past.  If you have any questions, feel free to get in <a href="#" class="font-bold" data-to="#contact">contact.</a>
                             </p>
                         </div>
                         <div class="cell large-6 cell-img">
@@ -198,6 +198,7 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Friends of Animals Charities</p>
                                         <p>Website Design & Development(CMS)</p>
+                                        <a href="https://friendsofanimals.tk" target="_blank" class="button button-custom">Visit Site</a>
                                     </div>
                                 </div>
                             </div>
@@ -209,6 +210,31 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Container Plan</p>
                                         <p>Website Design & Development(CMS)</p>
+                                        <a href="https://containerplan.tk" target="_blank" class="button button-custom">Visit Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide website">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img src="./assets/img/eastern.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Eastern Earthmovers Ltd</p>
+                                        <p>Website Design & Development(CMS)</p>
+                                        <a href="https://easternearthmovers.com" target="_blank" class="button button-custom">Visit Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide website">
+                                <div class="grid-x">
+                                    <div class="cell large-6 swiper-cell-img">
+                                        <img src="./assets/img/gypset.png" alt="">
+                                    </div>
+                                    <div class="cell large-6 swiper-cell-content">
+                                        <p class="h4 font-bold">Gypset Ltd</p>
+                                        <p>Website Design & Development(CMS)</p>
+                                        <a href="https://gypset.nz" target="_blank" class="button button-custom">Visit Site</a>
                                     </div>
                                 </div>
                             </div>
@@ -276,10 +302,10 @@
     </div>
     <div class="mobile-menu">
         <ul class="menu vertical">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" data-to-mob="#home">Home</a></li>
+            <li><a href="#" data-to-mob="#about">About</a></li>
+            <li><a href="#" data-to-mob="#projects">Projects</a></li>
+            <li><a href="#" data-to-mob="#contact">Contact</a></li>
         </ul>
     </div>
 
@@ -293,6 +319,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery.easing.min.js"></script>
     <script src="./assets/js/custom.js"></script>
 </body>
 

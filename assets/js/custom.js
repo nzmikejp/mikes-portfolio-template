@@ -1,10 +1,10 @@
 
 (function($){
     $(function(){
-        
-        //--- Menu Button
+        //--- Is Menu Open
         var isOpen = false
 
+        //--- Menu Button
         $('.menu-btn').on('click',function(){
 
             if(isOpen == false){
@@ -23,18 +23,91 @@
             }
         })
 
-        $('.mobile-menu a').on('click', function(){
-            $('.menu-btn').removeClass('open')
-            $('.wrap').removeClass('open')
-            $('body').removeClass('hidden')
-            
-            isOpen = false
+        //--- Setting default easing
+        $.easing.def = "easeInOutExpo";
+
+        //--- Finding sections offsets
+        var sectionOffset1 = $('#home').offset().top
+        var sectionOffset2 = $('#about').offset().top
+        var sectionOffset3 = $('#projects').offset().top
+        var sectionOffset4 = $('#contact').offset().top
+
+        $(window).on('resize',function(){
+            sectionOffset1 = $('#home').offset().top
+            sectionOffset2 = $('#about').offset().top
+            sectionOffset3 = $('#projects').offset().top
+            sectionOffset4 = $('#contact').offset().top
         })
 
-        $('.nav-menu .menu a').on('click', function(){
-            $('.nav-menu .menu a').removeClass('active')
-            $(this).addClass('active')
+        //--- Nav Click Event Smooth Scrolling
+        $('[data-to]').on('click',function(e){
+
+            e.preventDefault()
+
+            var sTarget = $(this).data('to')
+
+            //--- Adjusting where the sections should align        
+            var sectionOffset = $(sTarget).offset().top -70
+
+    
+            //--- Custom easeing added
+            $('html,body').animate({scrollTop:sectionOffset}, 1200, 'easeInOutExpo')
+
         })
+
+        //--- Nav Click Event Smooth Scrolling
+        $('[data-to-mob]').on('click',function(e){
+
+            e.preventDefault()
+
+            var sTarget = $(this).data('to-mob')
+
+            if(isOpen == true){
+                $('.menu-btn').removeClass('open')
+                $('body').removeClass('hidden')
+                $('.wrap').removeClass('open').one('transitionend',function(){
+
+                    //--- Adjusting where the sections should align        
+                    var sectionOffset = $(sTarget).offset().top -70
+            
+                    //--- Custom easeing added
+                    $('html,body').animate({scrollTop:sectionOffset}, 1200, 'easeInOutExpo')
+
+                })
+                
+                isOpen = false
+            }
+        })
+
+        //--- Scrolling Event
+        $(document).on('scroll',function(){
+
+            var scrollTop = $(document).scrollTop()
+
+            //--- Current Menu Shift        
+            var current
+
+            if(scrollTop >= sectionOffset1 && scrollTop < sectionOffset2){
+                current = $('#nav-menu > li:nth-child(1) a')
+            }
+            
+            if(scrollTop >= sectionOffset2 - 80 && scrollTop < sectionOffset3){
+                current = $('#nav-menu > li:nth-child(2) a')
+            }
+            
+            if(scrollTop >= sectionOffset3 - 80 && scrollTop < sectionOffset4){
+                current = $('#nav-menu > li:nth-child(3) a')
+            }
+            
+            if(scrollTop >= sectionOffset4 - 600) {
+                current = $('#nav-menu > li:nth-child(4) a')
+            }
+
+            current.addClass('current')
+            $('#nav-menu > li a').not(current).removeClass('current')
+
+        })
+
 
         //--- Menu Responsive Check
         function showWidth(display) {

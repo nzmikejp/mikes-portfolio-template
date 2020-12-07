@@ -176,11 +176,11 @@ body.hidden {
   transition: ease width 0.3s;
 }
 
-.main-header .menu a.active {
+.main-header .menu a.current {
   color: #EEEEEE;
 }
 
-.main-header .menu a.active:after {
+.main-header .menu a.current:after {
   width: 100%;
 }
 
@@ -497,6 +497,19 @@ body.hidden {
   width: 105%;
 }
 
+.button-custom {
+  background: transparent;
+  border: 0.2em #fff solid;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
+}
+
+.button-custom:hover {
+  border-color: #b3b3b3;
+  color: #b3b3b3;
+  background: transparent;
+}
+
 .section-hero {
   background: center bottom/cover no-repeat url("../img/bg-geo-shape.svg") #0E0E0E;
   padding-top: 10em;
@@ -712,6 +725,7 @@ body.hidden {
 @media (min-width: 65em) {
   .section-projects .swiper-slide .swiper-cell-img img {
     width: 45em;
+    margin: 0 3em 0 auto;
   }
 }
 
@@ -722,6 +736,7 @@ body.hidden {
 @media (min-width: 65em) {
   .section-projects .swiper-slide .swiper-cell-img .app {
     width: 22em;
+    margin: 0 15em 0 auto;
   }
 }
 
@@ -738,6 +753,9 @@ body.hidden {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 15em;
 }
 
