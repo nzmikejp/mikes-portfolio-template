@@ -8,11 +8,17 @@
         $('.menu-btn').on('click',function(){
 
             if(isOpen == false){
+
                 $(this).addClass('open')
-                $('.wrap').addClass('open')
-                $('body').addClass('hidden')
-            
-                isOpen = true
+
+                $('html,body').animate({scrollTop:sectionOffset1}, function(){
+
+                    $('.wrap').addClass('open')
+                    $('body').addClass('hidden')
+
+                    isOpen = true
+
+                })
     
             }else {
                 $('.menu-btn').removeClass('open')
