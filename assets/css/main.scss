@@ -175,9 +175,10 @@
         }
     }
 
-    .swiper-container {
+    .swiper {
         height: 40em;
         background: $color-light-10;
+        overflow: hidden;
     }
 
     .swiper-slide {

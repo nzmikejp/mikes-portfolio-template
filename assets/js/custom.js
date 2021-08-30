@@ -149,9 +149,9 @@
         });
 
         //--- Swiper
-        var mySwiper = new Swiper('.swiper-container', {
+        var mySwiper = new Swiper('.swiper', {
             direction: 'vertical',
-            autoHeight: true,
+            autoHeight: false,
             slidesPerView: 1,
             mousewheel: true,
             pagination: {
