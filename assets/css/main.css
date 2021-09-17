@@ -233,7 +233,7 @@ body.hidden {
   position: fixed;
   top: 8rem;
   right: 0;
-  width: 25rem;
+  width: 20rem;
   height: 3.5rem;
   -webkit-transform: translateX(100%) rotate(90deg);
           transform: translateX(100%) rotate(90deg);
