@@ -1,10 +1,14 @@
 
 (function($){
     $(function(){
-        //--- Is Menu Open
+
+        // Is Menu Open
+        // ------------
         var isOpen = false
 
-        //--- Menu Button
+        // Menu Button
+        // -----------
+
         $('.menu-btn').on('click',function(){
 
             if(isOpen == false){
@@ -29,10 +33,14 @@
             }
         })
 
-        //--- Setting default easing
+        // Setting default easing
+        // ----------------------
+        
         $.easing.def = "easeInOutExpo";
 
-        //--- Finding sections offsets
+        // Finding sections offsets
+        // ------------------------
+
         var sectionOffset1 = $('#home').offset().top
         var sectionOffset2 = $('#about').offset().top
         var sectionOffset3 = $('#projects').offset().top
@@ -45,23 +53,31 @@
             sectionOffset4 = $('#contact').offset().top
         })
 
-        //--- Nav Click Event Smooth Scrolling
+        // Nav Click Event Smooth Scrolling
+        // --------------------------------
+
         $('[data-to]').on('click',function(e){
 
             e.preventDefault()
 
             var sTarget = $(this).data('to')
 
-            //--- Adjusting where the sections should align        
-            var sectionOffset = $(sTarget).offset().top -70
+            // Adjusting where the sections should align
+            // -----------------------------------------
+
+            var sectionOffset = $(sTarget).offset().top -20
 
     
-            //--- Custom easeing added
+            // Custom easeing added
+            // --------------------
+
             $('html,body').animate({scrollTop:sectionOffset}, 1200, 'easeInOutExpo')
 
         })
 
-        //--- Nav Click Event Smooth Scrolling
+        // Mobile Nav Click Event Smooth Scrolling
+        // --------------------------------
+
         $('[data-to-mob]').on('click',function(e){
 
             e.preventDefault()
@@ -73,10 +89,14 @@
                 $('body').removeClass('hidden')
                 $('.wrap').removeClass('open').one('transitionend',function(){
 
-                    //--- Adjusting where the sections should align        
-                    var sectionOffset = $(sTarget).offset().top -70
+                    // Adjusting where the sections should align
+                    // -----------------------------------------
+
+                    var sectionOffset = $(sTarget).offset().top -20
             
-                    //--- Custom easeing added
+                    // Custom easeing added
+                    // --------------------
+
                     $('html,body').animate({scrollTop:sectionOffset}, 1200, 'easeInOutExpo')
 
                 })
@@ -85,12 +105,14 @@
             }
         })
 
-        //--- Scrolling Event
+        // Scrolling Event
+        // ---------------
+
         $(document).on('scroll',function(){
 
             var scrollTop = $(document).scrollTop()
 
-            //--- Current Menu Shift        
+            // Current Menu Shift        
             var current
 
             if(scrollTop >= sectionOffset1 && scrollTop < sectionOffset2){
@@ -105,7 +127,7 @@
                 current = $('#nav-menu > li:nth-child(3) a')
             }
             
-            if(scrollTop >= sectionOffset4 - 600) {
+            if(scrollTop >= sectionOffset4 - 900) {
                 current = $('#nav-menu > li:nth-child(4) a')
             }
 
@@ -115,7 +137,9 @@
         })
 
 
-        //--- Menu Responsive Check
+        // Menu Responsive Check
+        // ---------------------
+
         function showWidth(display) {
             if(display) {
                 $(window).resize(function(){
@@ -138,7 +162,9 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        //--- Sticky header
+        // Sticky header
+        // -------------
+
         ScrollTrigger.create({
             start: 'top -130',
             end: 99999,
@@ -148,12 +174,13 @@
             },
         });
 
-        //--- Swiper
+        // Swiper
+        // ------
         var mySwiper = new Swiper('.swiper', {
             direction: 'vertical',
             autoHeight: false,
             slidesPerView: 1,
-            mousewheel: true,
+            mousewheel: false,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -164,6 +191,15 @@
             },
              
         });
+
+        // AOS
+        // ---
+
+        $(document).ready(() =>{
+            AOS.init({
+                anchorPlacement: 'center-bottom'
+            });
+        })
 
 
     })

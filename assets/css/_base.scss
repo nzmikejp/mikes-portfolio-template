@@ -1,43 +1,24 @@
 //--- custom fonts
-@font-face {
-    font-family: 'gothambold';
-    src: url(../fonts/gotham/gothambold-webfont.woff2) format('woff2'),
-         url(../fonts/gotham/gothambold-webfont.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import './typography';
 
-@font-face {
-    font-family: 'gothambook';
-    src: url(../fonts/gotham/gotham-book-webfont.woff2) format('woff2'),
-         url(../fonts/gotham/gotham-book-webfont.woff) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avallon';
-    src: url(../fonts/Avallon/font.woff2) format('woff2'),
-        url(../fonts/Avallon/font.woff) format('woff');
-}
-
-$font-primary-book: 'gothambook', sans-serif;
-$font-primary-bold: 'gothambold', sans-serif;
-$font-headline: 'Avallon', 'cursive';
+$font-primary-book: 'brandon_grotesqueregular', sans-serif;
+$font-primary-bold: 'brandon_grotesqueblack', sans-serif;
+$font-headline: $font-primary-bold;
 
 $headline-size-1: 8.8rem;
-$headline-size-1-mob: 5.5rem;
-$headline-size-2: 7rem;
-$headline-size-2-mob: 5.5rem;
+$headline-size-1-mob: 3.5rem;
+$headline-size-2: 5rem;
+$headline-size-2-mob: 3.5rem;
 
 $letter-spacing: 0.15em;
 
 $color-light: #fff;
-$color-light-10: #FAFAFA;
-$color-light-20: #EEEEEE;
-$color-medium: #4C4C53;
+$color-light-10: #F6FBFA;
+$color-light-20: #E4F5F0;
+$color-medium: #6D6E71;
 $color-dark: #0E0E0E;
-$color-accent-red: #FF0000;
+$color-accent: #62C2A4;
+$color-accent-2: #1C252E;
 
 $bg-gradient: radial-gradient(60.64% 87.97% at 0% 0%, $color-medium 0%, $color-dark 100%);
 
@@ -93,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    font-size: 0.97rem;
+    font-size: 1rem;
     color: $color-dark;
 }
 
@@ -106,7 +87,7 @@ a {
     }
 }
 
-.h1 {
+.h1, .h5 {
     font-family: $font-primary-book;
 }
 
@@ -146,6 +127,7 @@ img {
 
 body {
     font-family: $font-primary-book;
+    font-size: 1em;
 }
 
 .font-bold {

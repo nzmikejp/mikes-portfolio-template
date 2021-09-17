@@ -1,9 +1,8 @@
-
 .wrap {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     @include transition;
-    box-shadow: 0 -1em 4em -0.5em rgba(0,0,0,0.5);
+    box-shadow: 0 -1em 4em -0.5em rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 1;
 }
@@ -22,28 +21,45 @@ body.hidden {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $padding-x-6;
     position: fixed;
     width: 100%;
-    height: 128px;
+    height: 100px;
+    padding-inline: 1.5rem 2rem;
     top: 0;
     left: 0;
     z-index: 90;
     transition: ease 0.3s all;
 
+    @include breakpoint-65 {
+        height: 115px;
+    }
+
     &--scrolled {
         height: 70px;
-        background-color: $color-dark;
+        background-color: $color-light;
 
         .nav-brand {
-            max-width: 60%;
+            max-width: 100%;
+            border-radius: 0;
+            background-color: unset;
 
             @include breakpoint-65 {
-                width: 17em;
+                width: 19em;
+            }
+        }
+
+        .menu a {
+
+            &:hover {
+                color: darken($color-accent, 10%) !important;
+            }
+
+            &.current {
+                color: $color-accent !important;
             }
         }
     }
-  
+
     .menu {
         display: none;
         transition: ease 0.3s all;
@@ -60,7 +76,7 @@ body.hidden {
     }
 
     .menu a {
-        color: lighten($color-medium, 20%);
+        color: $color-accent-2;
         position: relative;
         padding: 0.8em 0;
         margin: 0 1em;
@@ -70,7 +86,7 @@ body.hidden {
         font-size: 0.9rem;
 
         &:hover {
-            color: $color-light-20;
+            color: $color-light;
 
             &:after {
                 width: 100%;
@@ -84,7 +100,7 @@ body.hidden {
             left: 0;
             width: 0;
             height: 3px;
-            background-color: $color-accent-red;
+            background-color: darken($color-accent, 10%);
             border-radius: 1.5px;
             transition: ease width 0.3s;
         }
@@ -92,7 +108,7 @@ body.hidden {
     }
 
     .menu a.current {
-        color: $color-light-20;
+        color: $color-light;
 
         &:after {
             width: 100%;
@@ -103,49 +119,74 @@ body.hidden {
 
 //--- Navigation
 .nav-brand {
-    max-width: 70%;
-    transition: ease 0.5s all;
+    width: 14em;
+    border-radius: 0 2.5rem 2.5rem 0;
+    background-color: $color-light;
+    transition: ease 0.3s all;
+
+    @include breakpoint-65 {
+        width: 29em;
+    }
+
+
+    a {
+        width: 90%;
+        display: block;
+        padding: 1rem;
+        margin-inline: auto;
+
+        @include breakpoint-65 {
+            width: 70%;
+        }
+    }
 }
 
 .nav-social {
     display: flex;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 8rem;
     right: 0;
-    width:30rem;
-    transform:  rotate(90deg) translateY(-28.5rem);
+    width: 25rem;
+    height: 3.5rem;
+    transform: translateX(100%) rotate(90deg);
     transform-origin: top left;
-    mix-blend-mode: difference;
+    background: linear-gradient(to top, $color-accent 50%, darken($color-accent, 10%) 100%);
     z-index: 90;
 
-    .nav-bar {
-        flex: 0 0 8.5em;
-        height: 1px;
-        background-color: lighten($color-medium, 20%);
-        border-radius: 0 0.5em 0.5em 0;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 1.5rem;
+        height: 100%;
+        bottom: 0;
+        right: -1.5rem;
+        border-style: solid;
+        border-width: 5rem 1.5rem 0 0;
+        border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent;
     }
 
     .nav-email {
         transform: rotate(180deg);
         padding: $padding-x-2;
-        color: $color-light-20;
+        color: $color-light;
         display: block;
         line-height: 1.2;
         letter-spacing: $letter-spacing;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         transition: ease color 0.3s;
+        text-transform: uppercase;
 
         &:hover {
-            color: $color-accent-red;
+            color: $color-accent-2;
         }
     }
 
     .social-links {
-        color: lighten($color-medium, 20%);
+        color: $color-medium;
         display: flex;
         text-align: center;
-        
+
         a {
             color: inherit;
             transform: rotate(-90deg);
@@ -178,9 +219,9 @@ body.hidden {
         width: 100%;
         height: 100%;
         background: center top / cover no-repeat url('../img/bg-geo-shape.svg');
-        opacity: 0.3;
+        opacity: 0.05;
     }
-    
+
     &:after {
         content: '';
         position: absolute;
@@ -188,7 +229,7 @@ body.hidden {
         left: 0;
         width: 100%;
         height: 100%;
-        background: $color-dark;
+        background: $color-accent-2;
         z-index: -1;
     }
 
@@ -212,32 +253,40 @@ body.hidden {
 .headline-hero {
     font-size: $headline-size-1-mob;
     text-align: center;
-    color: $color-light;
+    color: $color-accent-2;
     line-height: 1;
 
-    @include breakpoint-65 {
-        font-size: 7.5em;
-        text-align: left;
+    @include breakpoint-custom(40) {
+        font-size: 5.5rem;
     }
 
-    @include breakpoint-custom(76) {
-        font-size: $headline-size-1;
+    @include breakpoint-65 {
+        font-size: 6.5em;
+        text-align: left;
     }
 
 }
 
 .byline-hero {
-    color: darken($color-light-20, 40%);
+    color: $color-light;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: $letter-spacing;
     max-width: 65%;
     font-family: $font-primary-book;
     margin: 0 auto;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     padding: $padding-y-2;
     margin-bottom: 1em;
     position: relative;
+
+    @include breakpoint-custom(40) {
+        font-size: 1.2rem;
+    }
+
+    @include breakpoint-65 {
+        font-size: 1.2rem;
+    }
 
     &:after {
         content: '';
@@ -248,7 +297,7 @@ body.hidden {
         width: 7.5em;
         height: 3px;
         border-radius: 1.5px;
-        background-color: $color-accent-red;
+        background-color: darken($color-accent, 10%);
     }
 
     @include breakpoint-65 {
@@ -270,24 +319,24 @@ body.hidden {
     line-height: 1;
     padding: 1rem 2rem 0.5rem 1rem;
     margin-bottom: 0.4em;
-    color: lighten($color-dark, 20%);
+    color: $color-accent-2;
 
     @include breakpoint-65 {
-        font-size: $headline-size-2; 
+        font-size: $headline-size-2;
     }
 }
 
 .headline-dark {
     font-size: $headline-size-2-mob;
-    border: 10px $color-light-20 solid;
+    border: 10px $color-accent solid;
     display: inline-block;
     line-height: 1;
-    padding: 1rem 2rem 0.5rem 1rem;
+    padding: 1rem ;
     margin-bottom: 0.4em;
     color: lighten($color-dark, 20%);
 
     @include breakpoint-65 {
-        font-size: $headline-size-2; 
+        font-size: $headline-size-2;
     }
 }
 
@@ -295,4 +344,3 @@ body.hidden {
 .grid-container {
     max-width: 90em;
 }
-

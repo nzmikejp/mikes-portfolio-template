@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
 
     <title>Michael J Potter | Front End Developer</title>
@@ -19,10 +29,10 @@
 <body>
     <div class="wrap">
         <header class="main-header">
-            <div class="nav-brand">
+            <div class="nav-brand" data-aos="fade-down">
                 <a href=""><img src="./assets/img/brand.svg" alt=""></a>
             </div>
-            <div class="nav-menu">
+            <div class="nav-menu" data-aos="fade-down">
                 <div class="menu-mobile">
                     <div class="menu-btn">
                         <div class="menu-btn-burg"></div>
@@ -36,82 +46,95 @@
                 </ul>
             </div>
         </header>
-        <div class="nav-social">
-            <div class="nav-bar"></div>
-            <a href="mailto:nzmikejp@gmail.com" class="nav-email">nzmikejp@gmail.com</a>
+        <div class="nav-social hide-for-small-only">
+            <a href="mailto:michael@michaeljpotter.com" class="nav-email">michael@michaeljpotter.com</a>
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i> </a>
-                <a href="#"><i class="fab fa-instagram"></i> </a>
-                <a href="#"><i class="fab fa-linkedin"></i> </a>
-                <a href="#"><i class="fab fa-github"></i> </a>
+                <a href="https://www.facebook.com/michael.jacksonpotter/" target="_blank"><i
+                        class="fab fa-facebook-f"></i> </a>
+                <a href="https://www.instagram.com/michaeljacksonpotter/" target="_blank"><i
+                        class="fab fa-instagram"></i> </a>
+                <a href="https://www.linkedin.com/in/michael-jackson-potter-603730199/" target="_blank"><i
+                        class="fab fa-linkedin"></i> </a>
+                <a href="https://github.com/nzmikejp" target="_blank"><i class="fab fa-github"></i> </a>
             </div>
         </div>
         <main>
+
+            <!-- hero -->
             <section class="section section-hero" id="home">
+                <div class="border-wrap">
+                    <div class="border"></div>
+                </div>
                 <div class="grid-container">
                     <div class="grid-x align-middle">
-                        <div class="cell large-5 large-offset-1 cell-content">
-                            <h1 class="headline-hero">Hi I'm Mike</h1>
-                            <p class="byline-hero h1">Front End Developer & UX/UI Designer</p>
+                        <div class="cell large-6 cell-content large-order-2">
+                            <h1 class="headline-hero" data-aos="fade-up" data-aos-delay="100">Hi I'm Mike</h1>
+                            <p class="byline-hero h1" data-aos="fade-up" data-aos-delay="200">Front End Developer &
+                                UX/UI Designer</p>
                         </div>
-                        <div class="cell large-6 profile-img">
-                            <img src="./assets/img/profile-img.png" alt="">
+                        <div class="cell large-6 profile-img large-order-1">
+                            <img src="./assets/img/profile-img.png" alt="" data-aos="fade-up">
                         </div>
                     </div>
                 </div>
-                <div class="divider">
-                    <svg viewBox="0 0 2000 117" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M693.527 0.254944L895.574 56.4704H491.481L693.527 0.254944Z" fill="white"
-                            fill-opacity="0.5" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M1002.37 55.2801L1179.01 114.018L1355.65 55.2801H2000.61V116.62H0.605957V55.2801H1002.37Z"
-                            fill="white" />
-                    </svg>
-                </div>
             </section>
-            <section class="section section-about" id="about">
+
+            <!-- about -->
+            <section class="section-about" id="about">
                 <div class="grid-container">
-                    <div class="grid-x grid-padding-x align-middle">
+                    <div class="grid-x">
                         <div class="cell large-6 cell-content">
-                            <h2 class="headline">About</h2>
-                            <p>
-                                Life is like a box of chocolates. Hahaha, Nah seriously though. Starting my career at
-                                16, I was persuaded to become a signwriter. Blink for a minute and 25 years had passed.
-                                In the signage industry, I have found myself working at all levels and finding my way up
-                                the creative ladder for some pretty cool companies.
+                            <h2 class="headline" data-aos="fade-up">About</h2>
+                            <p data-aos="fade-up">
+                                Now I know what you are thinking, Michael Jackson, Harry Potter, is this guy famous or
+                                what. Now I would like to say I can do a mean moonwalk or fly around on a broom stick,
+                                but sorry to spoil all the fun, I can't do either of those. At least not sober anyway.
+                                All jokes aside, I am a down to earth guy who loves his family and anything design &
+                                tech-related.
                             </p>
-                            <p>
-                                At the peak of my employment, I found myself managing a team of 25 employees. With
-                                reaching as far as I could in management, I decided to start my own graphic/signwriting
+                            <p data-aos="fade-up">
+                                Starting my career at 16, I decided to become a qualified signwriter. Spending 25 years
+                                in this industry, I have found myself working my way up the creative ladder for a few
+                                different compaines. At the peak of my employment, I found myself managing a team of 25
+                                employees. With reaching as far as I could in management, I decided to start my own
+                                graphic/signwriting
                                 business. Owning my business for 13 years, I can say I have seen, created and fabricated
                                 all weird and wonderful creations. I found myself being the can-do man to my
                                 longstanding client's design needs. While I was running my business, I was also
                                 regularly upskilling. Any creative software I could get my hands on, I would. This
-                                thurst leads me slowly to web design. I found designing websites
-                                quite satisfying; it ticked all the boxes.
+                                thurst leads me slowly to web design. I found designing websites quite satisfying; it
+                                ticked all the boxes.
                             </p>
-                            <p>
+                            <p data-aos="fade-up">
                                 In 2019 I sold my business and undertook further learning, in which I have just
-                                completed a diploma in UX Design/Web Development. If you would like to work with me,
-                                please feel free to reach out and make contact. We can do coffee.
+                                completed a diploma in UX Design/Web Development & a certificate in E-commerce. If you
+                                would like to work with me, please feel free to reach out and make contact. There's
+                                nothing better than sitting down and having a great chat over a good cup of coffee.
                             </p>
                         </div>
                         <div class="cell large-6 cell-img">
-                            <img src="./assets/img/mike-image.png" alt="">
+                            <div class="cell-img-wrap">
+                                <img src="./assets/img/mike-image.png" alt="Mike in phone" data-aos="fade-right"
+                                    data-aos-delay="100">
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- skills -->
             <section class="section section-skills" id="skills">
                 <div class="grid-container">
                     <div class="grid-x skills-wrap">
                         <div class="cell cell-upper">
                             <div class="grid-x grid-padding-x">
                                 <div class="cell medium-6">
-                                    <p class="h1"><span class="font-bold">Skills</span> I have picked up along the way...</p>
+                                    <p class="h1" data-aos="fade-up"><span class="font-bold">Skills</span> I have picked
+                                        up along the
+                                        way...</p>
                                 </div>
                                 <div class="cell medium-6">
-                                    <ul class="no-bullet">
+                                    <ul class="no-bullet" data-aos="fade-up">
                                         <li>Time Management, Collaborative</li>
                                         <li>Agile/Scrum Practices</li>
                                         <li>Lean Insights</li>
@@ -124,66 +147,79 @@
                             <div class="grid-x grid-padding-x">
                                 <div class="cell large-4 cell-container">
                                     <div class="cell-item">
-                                        <p class="font-bold h2">
+                                        <p class="font-bold h2" data-aos="fade-up">
                                             Frameworks/Libraries
                                         </p>
                                         <ul class="no-bullet">
-                                            <li>Bootstrap</li>
-                                            <li>Foundation</li>
-                                            <li>React</li>
-                                            <li>jQuery</li>
-                                            <li>Anime JS</li>
-                                            <li>GSAP JS</li>
-                                            <li>Wordpress/CMS</li>
+                                            <li data-aos="fade-up">Bootstrap</li>
+                                            <li data-aos="fade-up">Foundation</li>
+                                            <li data-aos="fade-up">React</li>
+                                            <li data-aos="fade-up">jQuery</li>
+                                            <li data-aos="fade-up">Anime JS</li>
+                                            <li data-aos="fade-up">GSAP JS</li>
+                                            <li data-aos="fade-up">Wordpress/CMS</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="cell large-4 cell-container">
                                     <div class="cell-item">
-                                        <p class="font-bold h2">
+                                        <p class="font-bold h2" data-aos="fade-up">
                                             Applications
                                         </p>
                                         <ul class="no-bullet">
-                                            <li>Photoshop</li>
-                                            <li>Illustrator</li>
-                                            <li>Indesign</li>
-                                            <li>Adobe XD</li>
-                                            <li>Figma</li>
-                                            <li>Sketch</li>
-                                            <li>Git/GitHub</li>
+                                            <li data-aos="fade-up">Photoshop</li>
+                                            <li data-aos="fade-up">Illustrator</li>
+                                            <li data-aos="fade-up">Indesign</li>
+                                            <li data-aos="fade-up">Adobe XD</li>
+                                            <li data-aos="fade-up">Figma</li>
+                                            <li data-aos="fade-up">Sketch</li>
+                                            <li data-aos="fade-up">Git/GitHub</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="cell large-4 cell-container">
                                     <div class="cell-item">
-                                        <p class="font-bold h2">
+                                        <p class="font-bold h2" data-aos="fade-up">
                                             Languages
                                         </p>
                                         <ul class="no-bullet">
-                                            <li>HTML 5</li>
-                                            <li>CSS</li>
-                                            <li>SASS/SCSS</li>
-                                            <li>JavaScript</li>
-                                            <li>PHP</li>
+                                            <li data-aos="fade-up">HTML 5</li>
+                                            <li data-aos="fade-up">CSS</li>
+                                            <li data-aos="fade-up">SASS/SCSS</li>
+                                            <li data-aos="fade-up">JavaScript</li>
+                                            <li data-aos="fade-up">PHP</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="grid-x">
+                        <div class="cell small-12 cell-cv" data-aos="fade-up">
+                            <a href="./assets/pdf/CV - Michael Jackson-Potter.pdf" target="_blank"
+                                class="button button-custom">Download CV</a>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- projects -->
             <section class="section section-projects" id="projects">
                 <div class="grid-container">
                     <div class="grid-x grid-padding-x">
                         <div class="cell large-6 cell-content">
-                            <h2 class="headline-dark">Projects</h2>
-                            <p>
-                                Over the last 25 years, I have spent many hours conceptualising, brainstorming and crafting all weird and wonderful works of art.  I want to be able to show all my back catalogue but to be fair; I think I would end up boring you silly.  Instead of that, I have presented some of my most recent work. And few of my favourites from the past.  If you have any questions, feel free to get in <a href="#" class="font-bold" data-to="#contact">contact.</a>
+                            <h2 class="headline-dark" data-aos="fade-up">Projects</h2>
+                            <p data-aos="fade-up">
+                                Over the last 25 years, I have spent many hours conceptualising, brainstorming and
+                                crafting all weird and wonderful works of art. I want to be able to show all my back
+                                catalogue but to be fair; I think I would end up boring you silly. Instead of that, I
+                                have presented some of my most recent work. And few of my favourites from the past. If
+                                you have any questions, feel free to get in <a href="#" class="font-bold"
+                                    data-to="#contact">contact.</a>
                             </p>
                         </div>
                         <div class="cell large-6 cell-img">
-                            <img src="./assets/img/queenstown.png" alt="">
+                            <img src="./assets/img/queenstown.png" alt="" data-aos="fade-up">
                         </div>
                     </div>
                 </div>
@@ -198,7 +234,8 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Friends of Animals Charities</p>
                                         <p>Website Design & Development(CMS)</p>
-                                        <a href="https://friendsofanimals.tk" target="_blank" class="button button-custom">Visit Site</a>
+                                        <a href="https://friendsofanimals.tk" target="_blank"
+                                            class="button button-custom">Visit Site</a>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +247,8 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Container Plan</p>
                                         <p>Website Design & Development(CMS)</p>
-                                        <a href="https://containerplan.tk" target="_blank" class="button button-custom">Visit Site</a>
+                                        <a href="https://containerplan.tk" target="_blank"
+                                            class="button button-custom">Visit Site</a>
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +260,8 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Eastern Earthmovers Ltd</p>
                                         <p>Website Design & Development(CMS)</p>
-                                        <a href="https://easternearthmovers.com" target="_blank" class="button button-custom">Visit Site</a>
+                                        <a href="https://easternearthmovers.com" target="_blank"
+                                            class="button button-custom">Visit Site</a>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +273,8 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Gypset Ltd</p>
                                         <p>Website Design & Development(CMS)</p>
-                                        <a href="https://gypset.nz" target="_blank" class="button button-custom">Visit Site</a>
+                                        <a href="https://gypset.nz" target="_blank" class="button button-custom">Visit
+                                            Site</a>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +286,8 @@
                                     <div class="cell large-6 swiper-cell-content">
                                         <p class="h4 font-bold">Destination Queenstown</p>
                                         <p>Web App Prototype</p>
-                                        <a href="https://phone.michaeljpotter.com/?url=https://queenstown.michaeljpotter.com" target="_blank" class="button button-custom">Have a play</a>
+                                        <a href="https://phone.michaeljpotter.com/?url=https://queenstown.michaeljpotter.com"
+                                            target="_blank" class="button button-custom">Have a play</a>
                                     </div>
                                 </div>
                             </div>
@@ -277,27 +318,35 @@
                     </div>
                 </div>
             </section>
+
+            <!-- contact -->
             <section class="section section-contact" id="contact">
                 <div class="grid-container">
                     <div class="grid-x grid-padding-x">
                         <div class="cell large-4 large-offset-1 cell-img">
-                            <img src="./assets/img/coffee-face.png" alt="">
+                            <img src="./assets/img/coffee-face.png" alt="" data-aos="fade-right">
                         </div>
                         <div class="cell large-6 cell-content">
-                            <h2 class="headline">Coffee?</h2>
-                            <p class="h4 font-bold">There's always time for coffee & chat.</p>
-                            <p>
-                                If you would like to know more about me or work with me, please feel free to send me an email.
+                            <h2 class="headline-dark" data-aos="fade-up">Coffee?</h2>
+                            <p class="h4 font-bold" data-aos="fade-up">There's always time for coffee & chat.</p>
+                            <p data-aos="fade-up">
+                                If you would like to know more about me or work with me, please feel free to send me an
+                                email.
                             </p>
-                            <a class="h5 font-bold" href="mailto:nzmikeejp@gmail.com">nzmikejp@gmail.com</a>
+                            <a class="h5" href="mailto:michael@michaeljpotter.com"
+                                data-aos="fade-up">michael@michaeljpotter.com</a>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+
+        <!-- footer -->
         <footer class="footer">
-            <div class="grid-container">
-                &copy;<script>document.write(new Date().getFullYear());</script> All Rights Reserved.
+            <div class="grid-container-fluid">
+                &copy;<script>
+                    document.write(new Date().getFullYear());
+                </script> All Rights Reserved.
             </div>
         </footer>
     </div>
@@ -315,11 +364,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/jquery.easing.min.js"></script>
     <script src="./assets/js/custom.js"></script>
 </body>

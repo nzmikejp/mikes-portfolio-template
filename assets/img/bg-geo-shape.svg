@@ -1,56 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 622.1 622.1" style="enable-background:new 0 0 622.1 622.1;" xml:space="preserve">
-<style type="text/css">
-	.st0{opacity:0.3;}
-	.st1{clip-path:url(#SVGID_2_);}
-	.st2{fill:#BBBBBB;}
-	.st3{fill:#FF0000;}
-	.st4{opacity:0.5;fill:#434449;enable-background:new    ;}
-	.st5{fill:#333438;}
-	.st6{fill:#777474;}
-	.st7{fill:#8F8F8F;}
-	.st8{clip-path:url(#SVGID_4_);fill:#FF0000;}
-</style>
-<g class="st0">
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_1_" y="0" width="622.1" height="622.1"/>
-				</defs>
-				<clipPath id="SVGID_2_">
-					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-				</clipPath>
-				<g class="st1">
-					<path class="st2" d="M414.7,414.7H207.4v207.4h207.4L414.7,414.7L414.7,414.7z"/>
-					<path class="st3" d="M622.1,414.7H414.7v207.4h207.4V414.7z"/>
-					<path class="st2" d="M207.4,207.4H0v207.4h207.4V207.4z"/>
-					<path class="st3" d="M414.7,207.4H207.4v207.4h207.4L414.7,207.4L414.7,207.4z"/>
-					<path class="st4" d="M622.1,207.4H414.7v207.4h207.4V207.4z"/>
-					<path class="st5" d="M414.7,0H207.4v207.4h207.4L414.7,0L414.7,0z"/>
-					<path class="st3" d="M207.4,207.4L0,414.7h207.4V207.4z"/>
-					<path class="st3" d="M622.1,207.4L414.7,414.7h207.4V207.4z"/>
-					<path class="st5" d="M622.1,622.1L414.7,414.7h207.4V622.1z"/>
-					<path class="st5" d="M414.7,414.7L207.4,207.4h207.4L414.7,414.7L414.7,414.7z"/>
-					<path class="st6" d="M0,207.4V0h206.2c57.3,0,103.7,46.4,103.7,103.7l0,0c0,57.3-46.4,103.7-103.7,103.7H0z"/>
-					<path class="st5" d="M0,622.1l203.6-207.4h2.6c57.3,0,103.7,46.4,103.7,103.7l0,0c0,57.3-46.4,103.7-103.7,103.7H0z"/>
-					<path class="st5" d="M0,0l207.4,207.4H0V0z"/>
-					<path class="st7" d="M414.7,0h207.4v103.7c0,57.3-46.4,103.7-103.7,103.7l0,0c-57.3,0-103.7-46.4-103.7-103.7L414.7,0L414.7,0z
-						"/>
-				</g>
-			</g>
-			<g>
-				<defs>
-					<rect id="SVGID_3_" y="0" width="622.1" height="622.1"/>
-				</defs>
-				<clipPath id="SVGID_4_">
-					<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
-				</clipPath>
-				<polygon class="st8" points="0,622.1 203.6,414.7 0,414.7 				"/>
-			</g>
-		</g>
-	</g>
+<svg width="919" height="1080" viewBox="0 0 919 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="919" height="1080">
+<path d="M919 0H0V1080H919V0Z" fill="#201D1D"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M199.1 720.2H-161V1080.3H199.1V720.2Z" fill="white"/>
+<path d="M559.1 720.2H199.1V1080.3H559.2V720.2H559.1Z" fill="#7A7C7F"/>
+<path d="M199.1 360.1H-161V720.2H199.1V360.1Z" fill="#DBDCDD"/>
+<path d="M559.1 360.1H199.1V720.2H559.2V360.1H559.1Z" fill="#5BB69A"/>
+<path d="M559.1 0.100006H199.1V360.2H559.2V0.100006H559.1Z" fill="#62C2A4"/>
+<path d="M199.1 360.1L-161 720.2H199.1V360.1Z" fill="white"/>
+<path d="M558.9 720L919 359.9H558.9V720Z" fill="#E8E8E9"/>
+<path d="M559.1 720.2L199.1 360.1H559.2V720.2H559.1Z" fill="#2A343E"/>
+<path opacity="0.17" d="M-161 360.1V0.100006H304.1C403.5 0.100006 484.1 80.7 484.1 180.1C484.1 279.5 403.5 360.1 304.1 360.1H-161Z" fill="white"/>
+<path d="M-154 1080.3L199.5 720.2H204.1C303.5 720.2 384.1 800.8 384.1 900.2C384.1 999.6 303.5 1080.2 204.1 1080.2H-154V1080.3Z" fill="#1C252E"/>
+<path d="M-161 0.100006L199.1 360.2H-161V0.100006Z" fill="#1C252E"/>
+<path d="M559.1 0.100006H919.2V180.1C919.2 279.5 838.6 360.1 739.2 360.1C639.8 360.1 559.2 279.5 559.2 180.1V0.100006H559.1Z" fill="#E8E8E9"/>
 </g>
 </svg>
