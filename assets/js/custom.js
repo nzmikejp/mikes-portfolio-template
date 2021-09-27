@@ -1,207 +1,218 @@
+(function ($) {
+  $(function () {
+    // Is Menu Open
+    // ------------
+    var isOpen = false;
 
-(function($){
-    $(function(){
+    // Menu Button
+    // -----------
 
-        // Is Menu Open
-        // ------------
-        var isOpen = false
+    $(".menu-btn").on("click", function () {
+      if (isOpen == false) {
+        $(this).addClass("open");
 
-        // Menu Button
-        // -----------
+        $("html,body").animate({ scrollTop: sectionOffset1 }, function () {
+          $(".wrap").addClass("open");
+          $("body").addClass("hidden");
 
-        $('.menu-btn').on('click',function(){
+          isOpen = true;
+        });
+      } else {
+        $(".menu-btn").removeClass("open");
+        $(".wrap").removeClass("open");
+        $("body").removeClass("hidden");
 
-            if(isOpen == false){
+        isOpen = false;
+      }
+    });
 
-                $(this).addClass('open')
+    // Setting default easing
+    // ----------------------
 
-                $('html,body').animate({scrollTop:sectionOffset1}, function(){
+    $.easing.def = "easeInOutExpo";
 
-                    $('.wrap').addClass('open')
-                    $('body').addClass('hidden')
+    // Finding sections offsets
+    // ------------------------
 
-                    isOpen = true
+    var sectionOffset1 = $("#home").offset().top;
+    var sectionOffset2 = $("#about").offset().top;
+    var sectionOffset3 = $("#projects").offset().top;
+    var sectionOffset4 = $("#contact").offset().top;
 
-                })
-    
-            }else {
-                $('.menu-btn').removeClass('open')
-                $('.wrap').removeClass('open')
-                $('body').removeClass('hidden')
-                
-                isOpen = false
-            }
-        })
+    $(window).on("resize", function () {
+      sectionOffset1 = $("#home").offset().top;
+      sectionOffset2 = $("#about").offset().top;
+      sectionOffset3 = $("#projects").offset().top;
+      sectionOffset4 = $("#contact").offset().top;
+    });
 
-        // Setting default easing
-        // ----------------------
-        
-        $.easing.def = "easeInOutExpo";
+    // Nav Click Event Smooth Scrolling
+    // --------------------------------
 
-        // Finding sections offsets
-        // ------------------------
+    $("[data-to]").on("click", function (e) {
+      e.preventDefault();
 
-        var sectionOffset1 = $('#home').offset().top
-        var sectionOffset2 = $('#about').offset().top
-        var sectionOffset3 = $('#projects').offset().top
-        var sectionOffset4 = $('#contact').offset().top
+      var sTarget = $(this).data("to");
 
-        $(window).on('resize',function(){
-            sectionOffset1 = $('#home').offset().top
-            sectionOffset2 = $('#about').offset().top
-            sectionOffset3 = $('#projects').offset().top
-            sectionOffset4 = $('#contact').offset().top
-        })
+      // Adjusting where the sections should align
+      // -----------------------------------------
 
-        // Nav Click Event Smooth Scrolling
-        // --------------------------------
+      var sectionOffset = $(sTarget).offset().top - 20;
 
-        $('[data-to]').on('click',function(e){
+      // Custom easeing added
+      // --------------------
 
-            e.preventDefault()
+      $("html,body").animate(
+        { scrollTop: sectionOffset },
+        1200,
+        "easeInOutExpo"
+      );
+    });
 
-            var sTarget = $(this).data('to')
+    // Mobile Nav Click Event Smooth Scrolling
+    // --------------------------------
 
+    $("[data-to-mob]").on("click", function (e) {
+      e.preventDefault();
+
+      var sTarget = $(this).data("to-mob");
+
+      if (isOpen == true) {
+        $(".menu-btn").removeClass("open");
+        $("body").removeClass("hidden");
+        $(".wrap")
+          .removeClass("open")
+          .one("transitionend", function () {
             // Adjusting where the sections should align
             // -----------------------------------------
 
-            var sectionOffset = $(sTarget).offset().top -20
+            var sectionOffset = $(sTarget).offset().top - 20;
 
-    
             // Custom easeing added
             // --------------------
 
-            $('html,body').animate({scrollTop:sectionOffset}, 1200, 'easeInOutExpo')
+            $("html,body").animate(
+              { scrollTop: sectionOffset },
+              1200,
+              "easeInOutExpo"
+            );
+          });
 
-        })
+        isOpen = false;
+      }
+    });
 
-        // Mobile Nav Click Event Smooth Scrolling
-        // --------------------------------
+    // Scrolling Event
+    // ---------------
 
-        $('[data-to-mob]').on('click',function(e){
+    $(document).on("scroll", function () {
+      var scrollTop = $(document).scrollTop();
 
-            e.preventDefault()
+      // Current Menu Shift
+      var current;
 
-            var sTarget = $(this).data('to-mob')
+      if (scrollTop >= sectionOffset1 && scrollTop < sectionOffset2) {
+        current = $("#nav-menu > li:nth-child(1) a");
+      }
 
-            if(isOpen == true){
-                $('.menu-btn').removeClass('open')
-                $('body').removeClass('hidden')
-                $('.wrap').removeClass('open').one('transitionend',function(){
+      if (scrollTop >= sectionOffset2 - 80 && scrollTop < sectionOffset3) {
+        current = $("#nav-menu > li:nth-child(2) a");
+      }
 
-                    // Adjusting where the sections should align
-                    // -----------------------------------------
+      if (scrollTop >= sectionOffset3 - 80 && scrollTop < sectionOffset4) {
+        current = $("#nav-menu > li:nth-child(3) a");
+      }
 
-                    var sectionOffset = $(sTarget).offset().top -20
-            
-                    // Custom easeing added
-                    // --------------------
+      if (scrollTop >= sectionOffset4 - 900) {
+        current = $("#nav-menu > li:nth-child(4) a");
+      }
 
-                    $('html,body').animate({scrollTop:sectionOffset}, 1200, 'easeInOutExpo')
+      current.addClass("current");
+      $("#nav-menu > li a").not(current).removeClass("current");
+    });
 
-                })
-                
-                isOpen = false
-            }
-        })
+    // Menu Responsive Check
+    // ---------------------
 
-        // Scrolling Event
-        // ---------------
+    function showWidth(display) {
+      if (display) {
+        $(window).resize(function () {
+          var width = $(window).innerWidth();
 
-        $(document).on('scroll',function(){
+          if (width > 1041 && isOpen === true) {
+            $(".menu-btn").removeClass("open");
+            $(".wrap").removeClass("open");
+            $("body").removeClass("hidden");
 
-            var scrollTop = $(document).scrollTop()
-
-            // Current Menu Shift        
-            var current
-
-            if(scrollTop >= sectionOffset1 && scrollTop < sectionOffset2){
-                current = $('#nav-menu > li:nth-child(1) a')
-            }
-            
-            if(scrollTop >= sectionOffset2 - 80 && scrollTop < sectionOffset3){
-                current = $('#nav-menu > li:nth-child(2) a')
-            }
-            
-            if(scrollTop >= sectionOffset3 - 80 && scrollTop < sectionOffset4){
-                current = $('#nav-menu > li:nth-child(3) a')
-            }
-            
-            if(scrollTop >= sectionOffset4 - 900) {
-                current = $('#nav-menu > li:nth-child(4) a')
-            }
-
-            current.addClass('current')
-            $('#nav-menu > li a').not(current).removeClass('current')
-
-        })
-
-
-        // Menu Responsive Check
-        // ---------------------
-
-        function showWidth(display) {
-            if(display) {
-                $(window).resize(function(){
-                    var width = $(window).innerWidth()
-                    
-                    if(width > 1041 && isOpen === true ){
-                        $('.menu-btn').removeClass('open')
-                        $('.wrap').removeClass('open')
-                        $('body').removeClass('hidden')  
-        
-                        isOpen = false
-                    }
-                }) 
-            }
-        }
-
-        $(document).ready(function(){
-            showWidth(true)
-        })
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Sticky header
-        // -------------
-
-        ScrollTrigger.create({
-            start: 'top -130',
-            end: 99999,
-            toggleClass: {
-                className: 'main-header--scrolled',
-                targets: '.main-header'
-            },
+            isOpen = false;
+          }
         });
+      }
+    }
 
-        // Swiper
-        // ------
-        var mySwiper = new Swiper('.swiper', {
-            direction: 'vertical',
-            autoHeight: false,
-            slidesPerView: 1,
-            mousewheel: false,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            },
-             
+    $(document).ready(function () {
+      showWidth(true);
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Sticky header
+    // -------------
+
+    ScrollTrigger.create({
+      start: "top -130",
+      end: 99999,
+      toggleClass: {
+        className: "main-header--scrolled",
+        targets: ".main-header",
+      },
+    });
+
+    // Swiper
+    // ------
+    var mySwiper = new Swiper(".swiper", {
+      direction: "vertical",
+      autoHeight: false,
+      slidesPerView: 1,
+      mousewheel: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // AOS
+    // ---
+
+    $(document).ready(() => {
+      AOS.init({
+        anchorPlacement: "center-bottom",
+        once: true,
+      });
+    });
+
+    // Projects
+    // --------
+
+    $("[data-open]").on("click", function () {
+      $("body").css("overflow", "hidden");
+      $("#projects-wrap").addClass("projects-wrap--open");
+
+      let target = "#" + $(this).data("open");
+      $(target).addClass("section-full--show");
+    });
+
+    $("#close-btn").on("click", function () {
+      $("#projects-wrap")
+        .removeClass("projects-wrap--open")
+        .one("transitionend", function () {
+          $(".section-full").removeClass("section-full--show");
+          $("body").css("overflow", "auto");
         });
-
-        // AOS
-        // ---
-
-        $(document).ready(() =>{
-            AOS.init({
-                anchorPlacement: 'center-bottom'
-            });
-        })
-
-
-    })
-
-})(jQuery)
+    });
+  });
+})(jQuery);

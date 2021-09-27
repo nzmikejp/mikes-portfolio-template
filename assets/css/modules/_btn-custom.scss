@@ -5,7 +5,23 @@
 
     &:hover {
         border-color: darken($color-light, 30%);
-        color: darken($color-light, 30%);
+        color: $color-accent;
         background: transparent;
+    }
+
+    &.dark {
+        border-color: $color-accent;
+        color: $color-accent;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $color-light;
+            background: $color-accent;
+        }
+
+        &:focus {
+            background: $color-accent;
+            color: $color-light;
+        }
     }
 }

@@ -92,7 +92,7 @@ a {
 }
 
 //--- breakpoints
-$screen-65-min: 65em;
+$screen-65-min: 1024px;
 
 @mixin breakpoint-65 {
     @media (min-width: #{$screen-65-min}) {
@@ -122,6 +122,7 @@ $screen-65-min: 65em;
 img {
     display: block;
     width: 100%;
+    height: auto;
 }
 
 

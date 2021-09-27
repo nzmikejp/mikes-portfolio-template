@@ -9,7 +9,7 @@
 // -----------
 
 .section-hero {
-    background: left bottom / 20rem no-repeat url('../img/bg-geo-shape.svg') $color-accent;
+    background: left bottom / 20rem no-repeat url('../img/bg-geo-shape.svg'), center/ cover url('../img/bg-beach.jpg') $color-accent;
     min-height: 50rem;
     overflow: hidden;
     display: flex;
@@ -17,11 +17,11 @@
     align-items: flex-end;
 
     @include breakpoint-custom(40) {
-        background: left bottom / 23rem no-repeat url('../img/bg-geo-shape.svg') $color-accent;
+        background: left bottom / 23rem no-repeat url('../img/bg-geo-shape.svg'), center/ cover url('../img/bg-beach.jpg') $color-accent;
     }
 
     @include breakpoint-65 {
-        background: left center / contain no-repeat url('../img/bg-geo-shape.svg') $color-accent;
+        background: left center / contain no-repeat url('../img/bg-geo-shape.svg'), center/ cover url('../img/bg-beach.jpg') $color-accent;
     }
 
     .cell-content {
@@ -29,7 +29,7 @@
 
         @include breakpoint-65 {
             margin-block-end: 0;
-        }
+        } 
     }
 
     .profile-img {
@@ -217,22 +217,6 @@
     .cell-cv {
         text-align: center;
         padding-block: 2rem;
-
-        .button-custom {
-            border-color: $color-accent;
-            color: $color-accent;
-            text-transform: uppercase;
-
-            &:hover {
-                color: $color-light;
-                background: $color-accent;
-            }
-
-            &:focus {
-                background: $color-accent;
-                color: $color-light;
-            }
-        }
     }
 }
 
@@ -334,6 +318,8 @@
         .swiper-pagination-bullet {
             transition: ease 0.3s all;
             opacity: 1;
+            width: 10px;
+            height: 10px;
 
             &:hover {
                 background: $color-light;
@@ -347,6 +333,166 @@
         }
     }
 }
+
+.projects-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+    clip-path: circle(0% at center);
+    transition: ease 0.5s all;
+
+    &--open {
+        clip-path: circle(100% at center);
+    }
+
+    .close-btn {
+        position: fixed;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 2rem;
+        right: 2rem;
+        background: darken($color-accent, 10%);
+        border-radius: 50%;
+        z-index: 50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: ease 0.3s all;
+
+        &:hover {
+            box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        path {
+            fill: $color-light;
+        }
+    }
+
+    .section-full {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        background: $color-light;
+        display: none;
+        padding-block: 0 3rem;
+
+        @include breakpoint-65 {
+            padding-block-end: 6rem;
+        }
+
+        &--show {
+            display: block;
+        }
+    }
+
+    .project-hero {
+        height: 15rem;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 -0.5rem 2rem rgba(0, 0, 0, 0.2);
+        }
+
+        @include breakpoint-65 {
+            height: 30rem;
+        }
+
+        img {
+            object-fit: cover;
+            object-position: left top;
+            height: 100%;
+        }
+    }
+
+    .project-content-wrap {
+        padding-block: 2rem 1rem;
+
+        @include breakpoint-65 {
+            padding-block: 6rem 1rem;
+        }
+    }
+
+    .label {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: $color-accent;
+        text-transform: uppercase;
+    }
+
+    .project-content {
+
+        h2 {
+            font-size: 1.8rem;
+            display: inline-block;
+            margin-block-end: 1rem;
+            border-block-end: 0.2rem $color-accent solid;
+
+            @include breakpoint-65 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            margin-block-end: 2rem;
+
+            @include breakpoint-65 {
+                font-size: 1.3rem;
+            }
+        }
+
+        ul {
+            columns: 15rem auto;
+        }
+
+        li {
+            list-style-type: disc;
+        }
+
+        hr {
+            padding-block: 0.5rem 1rem;
+        }
+
+    }
+
+    .project-img {
+        text-align: center;
+
+        .button {
+            margin-block-start: 3rem;
+        }
+    }
+
+    .project-old-img {
+        border-top: thin rgba(0, 0, 0, 0.15) solid;
+        padding-block-start: 1rem;
+
+        .img-wrap {
+    
+            img {
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 0.3rem;
+            }
+        }
+    }
+
+
+    
+}
+
 
 .section-contact {
     padding-block: 6em 2em;
@@ -389,6 +535,7 @@
         }
     }
 }
+
 
 
 // 2. Footer

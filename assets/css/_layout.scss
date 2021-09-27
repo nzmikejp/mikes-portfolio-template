@@ -37,6 +37,7 @@ body.hidden {
     &--scrolled {
         height: 70px;
         background-color: $color-light;
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.05);
 
         .nav-brand {
             max-width: 100%;
@@ -44,7 +45,7 @@ body.hidden {
             background-color: unset;
 
             @include breakpoint-65 {
-                width: 19em;
+                width: 25rem;
             }
         }
 
