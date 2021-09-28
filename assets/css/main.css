@@ -956,7 +956,7 @@ body.hidden {
 
 @media (min-width: 1024px) {
   .projects-wrap .project-hero {
-    height: 30rem;
+    height: 35rem;
   }
 }
 
@@ -1029,7 +1029,13 @@ body.hidden {
 
 .projects-wrap .project-old-img {
   border-top: thin rgba(0, 0, 0, 0.15) solid;
-  padding-block-start: 1rem;
+  padding-block: 1rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .projects-wrap .project-old-img {
+    padding-block-end: 4rem;
+  }
 }
 
 .projects-wrap .project-old-img .img-wrap img {

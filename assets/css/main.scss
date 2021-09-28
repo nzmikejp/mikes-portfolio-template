@@ -405,7 +405,7 @@
         }
 
         @include breakpoint-65 {
-            height: 30rem;
+            height: 35rem;
         }
 
         img {
@@ -476,7 +476,11 @@
 
     .project-old-img {
         border-top: thin rgba(0, 0, 0, 0.15) solid;
-        padding-block-start: 1rem;
+        padding-block: 1rem 2rem;
+
+        @include breakpoint-65 {
+            padding-block-end: 4rem;
+        }
 
         .img-wrap {
     
