@@ -220,7 +220,7 @@
       $([document.documentElement, document.body]).animate(
         {
           scrollTop: $("#swiper-projects").offset().top - 67,
-        }
+        },2000
       );
 
       // reactivate slider
