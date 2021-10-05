@@ -123,7 +123,7 @@
         current = $("#nav-menu > li:nth-child(3) a");
       }
 
-      if (scrollTop >= sectionOffset4 - 900) {
+      if (scrollTop >= sectionOffset4 - 300) {
         current = $("#nav-menu > li:nth-child(4) a");
       }
 
@@ -170,7 +170,7 @@
 
     // Swiper
     // ------
-    var mySwiper = new Swiper(".swiper", {
+    const mySwiper = new Swiper(".swiper", {
       direction: "vertical",
       autoHeight: false,
       slidesPerView: 1,
@@ -199,19 +199,38 @@
     // --------
 
     $("[data-open]").on("click", function () {
-      $("body").css("overflow", "hidden");
-      $("#projects-wrap").addClass("projects-wrap--open");
+
+      $("#projects-wrap")
+        .addClass("projects-wrap--open")
+        .one("transitionend", function () {
+          $(".wrap").hide();
+          $("#mobile-menu").hide();
+        });
 
       let target = "#" + $(this).data("open");
       $(target).addClass("section-full--show");
     });
 
     $("#close-btn").on("click", function () {
+
+      // show wrap div
+      $(".wrap").show();
+
+      // scroll to projects slider
+      $([document.documentElement, document.body]).animate(
+        {
+          scrollTop: $("#swiper-projects").offset().top - 67,
+        }
+      );
+
+      // reactivate slider
+      mySwiper.enable();
+
       $("#projects-wrap")
         .removeClass("projects-wrap--open")
         .one("transitionend", function () {
           $(".section-full").removeClass("section-full--show");
-          $("body").css("overflow", "auto");
+          $("#mobile-menu").show();
         });
     });
   });

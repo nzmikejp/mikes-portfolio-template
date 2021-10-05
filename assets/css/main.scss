@@ -276,10 +276,10 @@
 
             .app {
                 width: 12em;
+                margin-inline: auto;
 
                 @include breakpoint-65 {
                     width: 22em;
-                    margin: 0 15em 0 auto;
                 }
             }
         }
@@ -324,6 +324,7 @@
             &:hover {
                 background: $color-light;
                 opacity: 1;
+                box-shadow: 0 0 0 0.3rem rgba(255, 255, 255, 0.2);
             }
         }
 
@@ -344,6 +345,7 @@
     overflow-y: auto;
     clip-path: circle(0% at center);
     transition: ease 0.5s all;
+    background: $color-accent-2;
 
     &--open {
         clip-path: circle(100% at center);
@@ -364,7 +366,7 @@
         transition: ease 0.3s all;
 
         &:hover {
-            box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.3);
             cursor: pointer;
         }
 
@@ -396,6 +398,7 @@
         height: 15rem;
         overflow: hidden;
         position: relative;
+        background: $color-accent;
 
         &::after {
             content: '';

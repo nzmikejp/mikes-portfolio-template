@@ -50,6 +50,7 @@ img {
 body {
   font-family: "brandon_grotesqueregular", sans-serif;
   font-size: 1em;
+  background: #1C252E;
 }
 
 .font-bold {
@@ -122,6 +123,14 @@ body.hidden {
 
 .main-header--scrolled .menu a.current {
   color: #62C2A4 !important;
+}
+
+.main-header--scrolled .menu-btn:hover .menu-btn-burg {
+  background-color: #62C2A4;
+}
+
+.main-header--scrolled .menu-btn:hover .menu-btn-burg:before, .main-header--scrolled .menu-btn:hover .menu-btn-burg:after {
+  background-color: #62C2A4;
 }
 
 .main-header .menu {
@@ -823,12 +832,12 @@ body.hidden {
 
 .section-projects .swiper-slide .swiper-cell-img .app {
   width: 12em;
+  margin-inline: auto;
 }
 
 @media (min-width: 1024px) {
   .section-projects .swiper-slide .swiper-cell-img .app {
     width: 22em;
-    margin: 0 15em 0 auto;
   }
 }
 
@@ -874,6 +883,7 @@ body.hidden {
 .section-projects .swiper-pagination .swiper-pagination-bullet:hover {
   background: #fff;
   opacity: 1;
+  box-shadow: 0 0 0 0.3rem rgba(255, 255, 255, 0.2);
 }
 
 .section-projects .swiper-pagination .swiper-pagination-bullet-active {
@@ -890,6 +900,7 @@ body.hidden {
   overflow-y: auto;
   clip-path: circle(0% at center);
   transition: ease 0.5s all;
+  background: #1C252E;
 }
 
 .projects-wrap--open {
@@ -912,7 +923,7 @@ body.hidden {
 }
 
 .projects-wrap .close-btn:hover {
-  box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
@@ -945,6 +956,7 @@ body.hidden {
   height: 15rem;
   overflow: hidden;
   position: relative;
+  background: #62C2A4;
 }
 
 .projects-wrap .project-hero::after {

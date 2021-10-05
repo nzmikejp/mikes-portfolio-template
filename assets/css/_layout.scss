@@ -59,6 +59,19 @@ body.hidden {
                 color: $color-accent !important;
             }
         }
+
+        .menu-btn:hover {
+
+            .menu-btn-burg {
+                background-color: $color-accent;
+
+                &:before,
+                &:after {
+                    background-color: $color-accent
+                }
+            }
+
+        }
     }
 
     .menu {
@@ -332,7 +345,7 @@ body.hidden {
     border: 10px $color-accent solid;
     display: inline-block;
     line-height: 1;
-    padding: 1rem ;
+    padding: 1rem;
     margin-bottom: 0.4em;
     color: lighten($color-dark, 20%);
 
