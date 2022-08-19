@@ -9,14 +9,14 @@
 
     $(".menu-btn").on("click", function () {
       if (isOpen == false) {
-        $(this).addClass("open");
-
         $("html,body").animate({ scrollTop: sectionOffset1 }, function () {
           $(".wrap").addClass("open");
           $("body").addClass("hidden");
-
+          
           isOpen = true;
         });
+
+        $(this).addClass("open");
       } else {
         $(".menu-btn").removeClass("open");
         $(".wrap").removeClass("open");
@@ -122,8 +122,8 @@
       if (scrollTop >= sectionOffset3 - 80 && scrollTop < sectionOffset4) {
         current = $("#nav-menu > li:nth-child(3) a");
       }
-
-      if (scrollTop >= sectionOffset4 - 300) {
+      
+      if (scrollTop >= sectionOffset4 - 800) {
         current = $("#nav-menu > li:nth-child(4) a");
       }
 
